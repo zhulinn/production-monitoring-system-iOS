@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SettingViewController.swift
 //  Monitor
 //
 //  Created by Julian Zhu on 4/3/17.
@@ -8,18 +8,17 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
-
+class SettingViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
-
