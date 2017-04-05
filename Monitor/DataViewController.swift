@@ -13,7 +13,7 @@ class DataViewController: UIViewController {
     
     
     let  urlString = "http://www.reebh.com:8080/readlast.php"
-    var interval = 1
+    var interval = 2
     var updating = false
     var url: URL!
     var timer: Timer?
@@ -31,6 +31,7 @@ class DataViewController: UIViewController {
         if !updating {
             url = URL(string: urlString)!
             getButton.setTitle("Stop", for: .normal)
+            update()
             startTimer()
             updating = true
         } else {
@@ -50,16 +51,13 @@ class DataViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         //封装的版本
         Positionconf()
-
         view.addSubview(panelSFT)
         view.addSubview(panelSFH)
         view.addSubview(panelHFT)
         view.addSubview(panelHFH)
-        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(timesTest), userInfo: nil, repeats: true)
+   
     }
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
  
@@ -69,12 +67,6 @@ class DataViewController: UIViewController {
         panelHFT.setNeedsDisplay()
         panelHFH.setNeedsDisplay()
     }
-    /*
-    func Constraintsconf() {
-        LeftLeading.constant = UIScreen.main.bounds.size.width*5/40
-        RightLeading.constant =  UIScreen.main.bounds.size.width*10/40
-    }
-*/
     
     func Positionconf() {
         //  centers of dashboards
@@ -82,19 +74,27 @@ class DataViewController: UIViewController {
         let left = UIScreen.main.bounds.size.width*5/18
         let right = UIScreen.main.bounds.size.width*13/18
         let h1 = panelSFT.radius + h
-        let h2 = panelHFT.radius + (UIScreen.main.bounds.size.height - h - 50)/2 + h
+        let bottom = UIScreen.main.bounds.size.height - 50
+        let half = ( bottom - h)/2 + h
+        let h2 = panelHFT.radius + half
         panelSFT.center = CGPoint(x: left, y: h1)
         panelSFH.center = CGPoint(x: right, y: h1)
         panelHFT.center = CGPoint(x: left, y: h2)
         panelHFH.center = CGPoint(x: right, y: h2)
         //  origin of Labels
+        SFTLabel.frame.origin.x = left - SFTLabel.frame.width/2
+        SFTLabel.frame.origin.y = (h1 + half)/2 - SFTLabel.frame.height/2
         
+        SFHLabel.frame.origin.x = right - SFHLabel.frame.width/2
+        SFHLabel.frame.origin.y = SFTLabel.frame.origin.y
+        
+        HFTLabel.frame.origin.x = SFTLabel.frame.origin.x
+        HFTLabel.frame.origin.y = (h2 + bottom)/2 - HFTLabel.frame.height/2
+        
+        HFHLabel.frame.origin.x = SFHLabel.frame.origin.x
+        HFHLabel.frame.origin.y = HFTLabel.frame.origin.y
     }
-    
-    func showDataLabel() {
-   
-    }
-    
+
     func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(interval), target: self, selector: #selector(update), userInfo: nil, repeats: true)
     }
@@ -103,6 +103,7 @@ class DataViewController: UIViewController {
             timer.invalidate()
         }
     }
+    
     func update() {
         let queue = DispatchQueue.global()
         
@@ -121,8 +122,10 @@ class DataViewController: UIViewController {
                 let SFH = jsonArr[0]["Hr"] as? String
                 self.SFTLabel.text = SFT
                 self.SFHLabel.text = SFH
-                self.panelSFT.progressLayer.strokeEnd = self.StringToFloat(str: SFT!) * 0.01
-                self.panelSFH.progressLayer.strokeEnd = self.StringToFloat(str: SFH!) * 0.01
+                UIView.animate(withDuration: 0.3) {
+                    self.panelSFT.progressLayer.strokeEnd = self.StringToFloat(str: SFT!) * 0.01
+                    self.panelSFH.progressLayer.strokeEnd = self.StringToFloat(str: SFH!) * 0.01
+                }
             }
         }
         
@@ -150,17 +153,7 @@ class DataViewController: UIViewController {
         }
         return cgFloat
     }
-    @objc func timesTest(){
-        
 
-        let c = CGFloat(arc4random()%100)
-        let d = CGFloat(arc4random()%100)
-        UIView.animate(withDuration: 0.3) {
-
-            self.panelHFT.progressLayer.strokeEnd = c*0.01
-            self.panelHFH.progressLayer.strokeEnd = d*0.01
-        }
-    }
     
     
     
