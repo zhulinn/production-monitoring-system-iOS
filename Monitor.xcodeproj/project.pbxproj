@@ -16,6 +16,8 @@
 		B9314A221E929D1700626CCB /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9314A211E929D1700626CCB /* LineChart.swift */; };
 		B9314A241E929F8800626CCB /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9314A231E929F8800626CCB /* HistoryViewController.swift */; };
 		B9314A261E929FA200626CCB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9314A251E929FA200626CCB /* SettingViewController.swift */; };
+		B94D2C891E9547210080DFA7 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94D2C881E9547210080DFA7 /* PanelView.swift */; };
+		B9F14D201E94F2EF00E9C9D2 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F14D1F1E94F2EF00E9C9D2 /* Dashboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		B9314A211E929D1700626CCB /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		B9314A231E929F8800626CCB /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		B9314A251E929FA200626CCB /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		B94D2C881E9547210080DFA7 /* PanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
+		B9F14D1F1E94F2EF00E9C9D2 /* Dashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +71,10 @@
 				B9314A111E929CDF00626CCB /* GraphViewController.swift */,
 				B9314A231E929F8800626CCB /* HistoryViewController.swift */,
 				B9314A251E929FA200626CCB /* SettingViewController.swift */,
-				B9314A131E929CDF00626CCB /* Main.storyboard */,
 				B9314A211E929D1700626CCB /* LineChart.swift */,
+				B94D2C881E9547210080DFA7 /* PanelView.swift */,
+				B9F14D1F1E94F2EF00E9C9D2 /* Dashboard.swift */,
+				B9314A131E929CDF00626CCB /* Main.storyboard */,
 				B9314A161E929CDF00626CCB /* Assets.xcassets */,
 				B9314A181E929CDF00626CCB /* LaunchScreen.storyboard */,
 				B9314A1B1E929CDF00626CCB /* Info.plist */,
@@ -109,6 +115,7 @@
 					B9314A091E929CDF00626CCB = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 2JV42ZYZ4F;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -150,9 +157,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9314A221E929D1700626CCB /* LineChart.swift in Sources */,
+				B9F14D201E94F2EF00E9C9D2 /* Dashboard.swift in Sources */,
 				B9314A121E929CDF00626CCB /* GraphViewController.swift in Sources */,
 				B9314A0E1E929CDF00626CCB /* AppDelegate.swift in Sources */,
 				B9314A241E929F8800626CCB /* HistoryViewController.swift in Sources */,
+				B94D2C891E9547210080DFA7 /* PanelView.swift in Sources */,
 				B9314A101E929CDF00626CCB /* DataViewController.swift in Sources */,
 				B9314A261E929FA200626CCB /* SettingViewController.swift in Sources */,
 			);
@@ -275,6 +284,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2JV42ZYZ4F;
 				INFOPLIST_FILE = Monitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -288,6 +298,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2JV42ZYZ4F;
 				INFOPLIST_FILE = Monitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -316,6 +327,7 @@
 				B9314A201E929CDF00626CCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

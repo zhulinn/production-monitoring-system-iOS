@@ -17,13 +17,121 @@
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="温湿度实时数据" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNN-gW-6tI">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设定温度(℃)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLQ-BV-Tjh">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="VEh-dB-8cF"/>
+                                    <constraint firstAttribute="width" constant="89" id="z1u-FG-6pt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88.88" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBk-nT-LO9">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="HcK-sq-Dlw"/>
+                                    <constraint firstAttribute="height" constant="20" id="z3f-F1-2xX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSb-Kj-3eh">
+                                <frame key="frameInset" minX="64" minY="519" width="231" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设定湿度(%RH)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vu6-Qn-IR0">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="0no-sq-maO"/>
+                                    <constraint firstAttribute="height" constant="20" id="XLN-AT-XC6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88.88" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64F-wB-8zG">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="G3m-O7-oRD"/>
+                                    <constraint firstAttribute="width" constant="46" id="YIu-QZ-Si6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="88.88" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8R-k0-1OH">
+                                <frame key="frameInset" minX="64" minY="245" width="51" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="88.88" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgP-wq-yRz">
+                                <frame key="frameInset" minX="223" minY="245" width="46" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="88.88" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOv-Vv-B0H">
+                                <frame key="frameInset" minX="223" minY="436" width="46" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="88.88" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHq-q4-abs">
+                                <frame key="frameInset" minX="64" minY="436" width="46" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rJ-2z-BxJ">
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="开始采集"/>
+                                <connections>
+                                    <action selector="getData" destination="9pv-A4-QxB" eventType="touchUpInside" id="Iax-kv-abh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MBk-nT-LO9" firstAttribute="leading" secondItem="64F-wB-8zG" secondAttribute="leading" id="1ZJ-8r-zHs"/>
+                            <constraint firstItem="zLQ-BV-Tjh" firstAttribute="top" secondItem="jNN-gW-6tI" secondAttribute="bottom" constant="4" id="6ii-Ai-QH7"/>
+                            <constraint firstItem="7rJ-2z-BxJ" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="8UT-oN-6ze"/>
+                            <constraint firstItem="Vu6-Qn-IR0" firstAttribute="top" secondItem="zLQ-BV-Tjh" secondAttribute="bottom" id="8fb-HH-ObY"/>
+                            <constraint firstItem="jNN-gW-6tI" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="9a0-aQ-zh7"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="7rJ-2z-BxJ" secondAttribute="bottom" constant="5" id="Cod-S4-jFy"/>
+                            <constraint firstItem="Vu6-Qn-IR0" firstAttribute="leading" secondItem="zLQ-BV-Tjh" secondAttribute="leading" id="MTf-ba-4zL"/>
+                            <constraint firstItem="64F-wB-8zG" firstAttribute="top" secondItem="zLQ-BV-Tjh" secondAttribute="top" id="Zqe-r2-xB8"/>
+                            <constraint firstItem="MBk-nT-LO9" firstAttribute="top" secondItem="Vu6-Qn-IR0" secondAttribute="top" id="dXj-fl-oSq"/>
+                            <constraint firstItem="zLQ-BV-Tjh" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="-65.5" id="e0i-HM-QgK"/>
+                            <constraint firstItem="jNN-gW-6tI" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="iB0-9l-m4z"/>
+                            <constraint firstItem="64F-wB-8zG" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="84" id="xSv-Yf-l87"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="实时数据" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="HFHLabel" destination="wOv-Vv-B0H" id="wlX-bs-BBB"/>
+                        <outlet property="HFTLabel" destination="PHq-q4-abs" id="CCJ-G6-xOw"/>
+                        <outlet property="SFHLabel" destination="TgP-wq-yRz" id="O0X-j0-2cA"/>
+                        <outlet property="SFTLabel" destination="T8R-k0-1OH" id="3rE-hQ-Zca"/>
+                        <outlet property="SHLabel" destination="MBk-nT-LO9" id="gpb-Zg-csK"/>
+                        <outlet property="STLabel" destination="64F-wB-8zG" id="yde-bV-HBH"/>
+                        <outlet property="getButton" destination="7rJ-2z-BxJ" id="m3c-nq-u8L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-283" y="-37"/>
+            <point key="canvasLocation" x="-193" y="35"/>
         </scene>
         <!--历史数据-->
         <scene sceneID="I3d-2N-rX3">
@@ -74,13 +182,51 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="温湿度实时曲线" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrN-fA-8NM">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcm-hX-KfG" customClass="LineChart" customModule="Monitor" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xx4-Fe-5Rj">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqc-zY-hly">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hcm-hX-KfG" firstAttribute="top" secondItem="mqc-zY-hly" secondAttribute="bottom" id="Cp8-eC-wBa"/>
+                            <constraint firstAttribute="trailing" secondItem="hcm-hX-KfG" secondAttribute="trailing" id="GVI-xO-voO"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="hcm-hX-KfG" secondAttribute="bottom" id="Ido-Wh-GLl"/>
+                            <constraint firstItem="mqc-zY-hly" firstAttribute="top" secondItem="xx4-Fe-5Rj" secondAttribute="bottom" id="Jz0-Pf-csh"/>
+                            <constraint firstItem="xx4-Fe-5Rj" firstAttribute="top" secondItem="JrN-fA-8NM" secondAttribute="bottom" constant="4" id="QVu-V9-wAd"/>
+                            <constraint firstItem="hcm-hX-KfG" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="Vj1-2k-QUB"/>
+                            <constraint firstItem="JrN-fA-8NM" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="X1t-Rf-VZa"/>
+                            <constraint firstItem="xx4-Fe-5Rj" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="XyW-o6-KJQ"/>
+                            <constraint firstItem="hcm-hX-KfG" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="fkX-HR-cut"/>
+                            <constraint firstItem="JrN-fA-8NM" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="oUL-JU-aFQ"/>
+                            <constraint firstItem="mqc-zY-hly" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="yAu-MB-juh"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="实时曲线" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="label1" destination="xx4-Fe-5Rj" id="v57-Qs-K2E"/>
+                        <outlet property="label2" destination="mqc-zY-hly" id="z37-xS-tnX"/>
+                        <outlet property="lineChart" destination="hcm-hX-KfG" id="Qdf-TZ-F6Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="422" y="-37"/>
+            <point key="canvasLocation" x="421.875" y="-38.028169014084504"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
