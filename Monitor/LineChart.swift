@@ -1,5 +1,10 @@
-
-
+//
+//  LineChartViewController.swift
+//  Monitor
+//
+//  Created by Julian Zhu on 4/3/17.
+//  Copyright © 2017 Lin Zhu. All rights reserved.
+//
 
 import UIKit
 import QuartzCore

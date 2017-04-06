@@ -30,7 +30,7 @@ class GraphViewController: UIViewController, LineChartDelegate {
         lineChart.addLine(data)
         lineChart.addLine(data2)
         lineChart.delegate = self
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "SecondRefresh"), object: nil)
     }
     
     
@@ -49,8 +49,13 @@ class GraphViewController: UIViewController, LineChartDelegate {
      * Redraw chart on device rotation.
      */
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+      refresh()
+    }
+    func refresh() {
+        //print("refresh")
         if let chart = lineChart {
             chart.setNeedsDisplay()
         }
     }
+    
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B92AD34A1E9642990048E613 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92AD3491E9642990048E613 /* TabBarController.swift */; };
 		B9314A0E1E929CDF00626CCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9314A0D1E929CDF00626CCB /* AppDelegate.swift */; };
 		B9314A101E929CDF00626CCB /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9314A0F1E929CDF00626CCB /* DataViewController.swift */; };
 		B9314A121E929CDF00626CCB /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9314A111E929CDF00626CCB /* GraphViewController.swift */; };
@@ -17,10 +18,10 @@
 		B9314A241E929F8800626CCB /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9314A231E929F8800626CCB /* HistoryViewController.swift */; };
 		B9314A261E929FA200626CCB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9314A251E929FA200626CCB /* SettingViewController.swift */; };
 		B94D2C891E9547210080DFA7 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94D2C881E9547210080DFA7 /* PanelView.swift */; };
-		B9F14D201E94F2EF00E9C9D2 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F14D1F1E94F2EF00E9C9D2 /* Dashboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B92AD3491E9642990048E613 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B9314A0A1E929CDF00626CCB /* Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9314A0D1E929CDF00626CCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9314A0F1E929CDF00626CCB /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
@@ -33,7 +34,6 @@
 		B9314A231E929F8800626CCB /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		B9314A251E929FA200626CCB /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B94D2C881E9547210080DFA7 /* PanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
-		B9F14D1F1E94F2EF00E9C9D2 /* Dashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,13 +67,13 @@
 			isa = PBXGroup;
 			children = (
 				B9314A0D1E929CDF00626CCB /* AppDelegate.swift */,
+				B92AD3491E9642990048E613 /* TabBarController.swift */,
 				B9314A0F1E929CDF00626CCB /* DataViewController.swift */,
 				B9314A111E929CDF00626CCB /* GraphViewController.swift */,
 				B9314A231E929F8800626CCB /* HistoryViewController.swift */,
 				B9314A251E929FA200626CCB /* SettingViewController.swift */,
 				B9314A211E929D1700626CCB /* LineChart.swift */,
 				B94D2C881E9547210080DFA7 /* PanelView.swift */,
-				B9F14D1F1E94F2EF00E9C9D2 /* Dashboard.swift */,
 				B9314A131E929CDF00626CCB /* Main.storyboard */,
 				B9314A161E929CDF00626CCB /* Assets.xcassets */,
 				B9314A181E929CDF00626CCB /* LaunchScreen.storyboard */,
@@ -157,7 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9314A221E929D1700626CCB /* LineChart.swift in Sources */,
-				B9F14D201E94F2EF00E9C9D2 /* Dashboard.swift in Sources */,
+				B92AD34A1E9642990048E613 /* TabBarController.swift in Sources */,
 				B9314A121E929CDF00626CCB /* GraphViewController.swift in Sources */,
 				B9314A0E1E929CDF00626CCB /* AppDelegate.swift in Sources */,
 				B9314A241E929F8800626CCB /* HistoryViewController.swift in Sources */,

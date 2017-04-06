@@ -45,22 +45,30 @@ class DataViewController: UIViewController {
     lazy var panelHFT:PanelView = PanelView()
     lazy var panelHFH:PanelView = PanelView()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
 
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        //封装的版本
+        
+        // Dashboard
         Positionconf()
         view.addSubview(panelSFT)
         view.addSubview(panelSFH)
         view.addSubview(panelHFT)
         view.addSubview(panelHFH)
-   
+        
+        //TabBar 监听
+        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "FirstRefresh"), object: nil)
+    }
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self)
     }
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
- 
+        refresh()
+    }
+
+    func refresh() {
+        //print("refresh")
         Positionconf()
         panelSFT.setNeedsDisplay()
         panelSFH.setNeedsDisplay()
@@ -75,7 +83,7 @@ class DataViewController: UIViewController {
         let right = UIScreen.main.bounds.size.width*13/18
         let h1 = panelSFT.radius + h
         let bottom = UIScreen.main.bounds.size.height - 50
-        let half = ( bottom - h)/2 + h
+        let half = (bottom - h)/2 + h
         let h2 = panelHFT.radius + half
         panelSFT.center = CGPoint(x: left, y: h1)
         panelSFH.center = CGPoint(x: right, y: h1)
@@ -83,18 +91,18 @@ class DataViewController: UIViewController {
         panelHFH.center = CGPoint(x: right, y: h2)
         //  origin of Labels
         SFTLabel.frame.origin.x = left - SFTLabel.frame.width/2
-        SFTLabel.frame.origin.y = (h1 + half)/2 - SFTLabel.frame.height/2
+        SFTLabel.frame.origin.y = (h1 + half)/2 - SFTLabel.frame.height/2 + 10
         
         SFHLabel.frame.origin.x = right - SFHLabel.frame.width/2
         SFHLabel.frame.origin.y = SFTLabel.frame.origin.y
         
         HFTLabel.frame.origin.x = SFTLabel.frame.origin.x
-        HFTLabel.frame.origin.y = (h2 + bottom)/2 - HFTLabel.frame.height/2
+        HFTLabel.frame.origin.y = (h2 + bottom)/2 - HFTLabel.frame.height/2 + 10
         
         HFHLabel.frame.origin.x = SFHLabel.frame.origin.x
         HFHLabel.frame.origin.y = HFTLabel.frame.origin.y
     }
-
+    
     func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(interval), target: self, selector: #selector(update), userInfo: nil, repeats: true)
     }
@@ -118,13 +126,14 @@ class DataViewController: UIViewController {
                 
             }
             DispatchQueue.main.async {
-                let SFT = jsonArr[0]["Tp"] as? String
-                let SFH = jsonArr[0]["Hr"] as? String
-                self.SFTLabel.text = SFT
-                self.SFHLabel.text = SFH
-                UIView.animate(withDuration: 0.3) {
-                    self.panelSFT.progressLayer.strokeEnd = self.StringToFloat(str: SFT!) * 0.01
-                    self.panelSFH.progressLayer.strokeEnd = self.StringToFloat(str: SFH!) * 0.01
+                let SFT = jsonArr[0]["Tp"] as! String
+                let SFH = jsonArr[0]["Hr"] as! String
+                self.SFTLabel.text = "送风温度：\(SFT)"
+                self.SFHLabel.text = "送风湿度：\(SFH)"
+                UIView.animate(withDuration: 0.3)
+                {
+                    self.panelSFT.progressLayer.strokeEnd = self.StringToFloat(str: SFT) * 0.01
+                    self.panelSFH.progressLayer.strokeEnd = self.StringToFloat(str: SFH) * 0.01
                 }
             }
         }
