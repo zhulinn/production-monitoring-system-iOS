@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9067EAF1E9830F100744F8B /* alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = B9067EAE1E9830F100744F8B /* alert.wav */; };
 		B92AD34A1E9642990048E613 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92AD3491E9642990048E613 /* TabBarController.swift */; };
 		B9314A0E1E929CDF00626CCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9314A0D1E929CDF00626CCB /* AppDelegate.swift */; };
 		B9314A101E929CDF00626CCB /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9314A0F1E929CDF00626CCB /* DataViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B9067EAE1E9830F100744F8B /* alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alert.wav; sourceTree = "<group>"; };
 		B92AD3491E9642990048E613 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B9314A0A1E929CDF00626CCB /* Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9314A0D1E929CDF00626CCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		B9314A0C1E929CDF00626CCB /* Monitor */ = {
 			isa = PBXGroup;
 			children = (
+				B9067EAE1E9830F100744F8B /* alert.wav */,
 				B9314A0D1E929CDF00626CCB /* AppDelegate.swift */,
 				B92AD3491E9642990048E613 /* TabBarController.swift */,
 				B9314A0F1E929CDF00626CCB /* DataViewController.swift */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9314A1A1E929CDF00626CCB /* LaunchScreen.storyboard in Resources */,
+				B9067EAF1E9830F100744F8B /* alert.wav in Resources */,
 				B9314A171E929CDF00626CCB /* Assets.xcassets in Resources */,
 				B9314A151E929CDF00626CCB /* Main.storyboard in Resources */,
 			);

@@ -23,10 +23,13 @@ class PanelView: UIView {
 
     
     public lazy var progressLayer = CAShapeLayer()
+    public lazy var alertprogressLayer = CAShapeLayer()
 
     let width = UIScreen.main.bounds.size.width
     let height = UIScreen.main.bounds.size.height
     var radius = CGFloat(0)
+    var threshold = CGFloat(0.5)
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         radius = width < height ? width/6 : height/6
@@ -43,9 +46,29 @@ class PanelView: UIView {
         /// 进度曲线
         createProgressLine()
     }
-    
+  /*
+    public  init(frame: CGRect, s: CGFloat) {
+        super.init(frame: frame)
+        threshold = s
+        radius = width < height ? width/6 : height/6
+
+        createCircle()
+        
+        /// 创建刻度
+        createscale()
+        
+        /// 创建刻度值
+        createCircleValue()
+        
+        /// 进度曲线
+        createProgressLine()
+        
+    }
+*/    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        radius = width < height ? width/6 : height/6
+
         /// 创建圆
         createCircle()
         
@@ -72,7 +95,7 @@ class PanelView: UIView {
         let shapeLayer = CAShapeLayer()
         shapeLayer.lineWidth = radius/16
         shapeLayer.lineCap = "round"
-        shapeLayer.fillColor = UIColor.white.cgColor
+        shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.strokeColor = UIColor(colorLiteralRed: 185/255.0, green: 243/255.0, blue: 110/255.0, alpha: 1.0).cgColor
         shapeLayer.path = cicrle.cgPath
         
@@ -154,9 +177,21 @@ class PanelView: UIView {
         progressLayer.strokeColor = UIColor.cyan.cgColor
         progressLayer.path = progressPath.cgPath
         progressLayer.strokeStart = 0
-        progressLayer.strokeEnd = 0.5
+        progressLayer.strokeEnd = 0.70
         layer.addSublayer(progressLayer)
+
         
+        // 警报曲线
+        alertprogressLayer.lineWidth = radius*3/16
+        alertprogressLayer.fillColor = UIColor.clear.cgColor
+        alertprogressLayer.strokeColor = UIColor.red.cgColor
+        alertprogressLayer.path = progressPath.cgPath
+        alertprogressLayer.strokeStart = threshold
+        alertprogressLayer.strokeEnd = progressLayer.strokeEnd
+    
+        layer.addSublayer(alertprogressLayer)
+
+
     }
     
     /// 计算文本的位置

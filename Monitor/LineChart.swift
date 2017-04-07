@@ -126,6 +126,7 @@ open class LineChart: UIView {
     open var delegate: LineChartDelegate?
     
     // data stores
+    fileprivate var linenames: [String] = []
     fileprivate var dataStore: [[CGFloat]] = []
     fileprivate var dotsDataStore: [[DotCALayer]] = []
     fileprivate var lineLayerStore: [CAShapeLayer] = []
@@ -203,7 +204,7 @@ open class LineChart: UIView {
         for (lineIndex, _) in dataStore.enumerated() {
             
             drawLine(lineIndex)
-            
+            drawdirections()
             // draw dots
             if dots.visible { drawDataDots(lineIndex) }
             
@@ -385,6 +386,7 @@ open class LineChart: UIView {
     
     
     
+    
     /**
      * Draw line.
      */
@@ -491,6 +493,29 @@ open class LineChart: UIView {
         path.stroke()
     }
     
+    /**
+     * Draw  directions
+     */
+    fileprivate func drawdirections() {
+        let x = self.y.axis.inset
+        
+        let y = 0
+        let scale =  60
+        for index in 0..<self.dataStore.count {
+            let label = UILabel(frame: CGRect(x: Int(x) + index * scale, y: y, width: 10, height: 10))
+            label.font = UIFont.systemFont(ofSize: 11)
+            label.text = "◼︎"
+            label.textColor = self.colors[index]
+            self.addSubview(label)
+            let labeldesciption = UILabel(frame: CGRect(x: Int(x) + index * scale + 12, y: y, width: 60, height: 12))
+            labeldesciption.font = UIFont.systemFont(ofSize: 11)
+            labeldesciption.text = linenames[index]
+            self.addSubview(labeldesciption)
+
+        }
+
+    }
+    
     
     
     /**
@@ -548,6 +573,8 @@ open class LineChart: UIView {
     
     
     
+
+    
     /**
      * Add line chart
      */
@@ -556,6 +583,10 @@ open class LineChart: UIView {
         self.setNeedsDisplay()
     }
     
+    
+    open func addlinename(_ name: String) {
+        self.linenames.append(name)
+    }
     
     
     /**

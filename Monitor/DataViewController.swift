@@ -8,15 +8,26 @@
 
 
 import UIKit
+import AudioToolbox
 
 class DataViewController: UIViewController {
     
     
     let  urlString = "http://www.reebh.com:8080/readlast.php"
-    var interval = 2
+    var interval = 1
     var updating = false
     var url: URL!
     var timer: Timer?
+    var st: CGFloat!
+    var sh: CGFloat!
+    var isPlaying = false
+    var soundId: SystemSoundID = 0
+    
+   lazy var panelSFH : PanelView = PanelView()
+   lazy var panelSFT : PanelView = PanelView()
+   lazy var panelHFH : PanelView = PanelView()
+   lazy var panelHFT : PanelView = PanelView()
+    
     
     @IBOutlet weak var getButton: UIButton!
     @IBOutlet weak var SFTLabel: UILabel!
@@ -27,28 +38,29 @@ class DataViewController: UIViewController {
     @IBOutlet weak var STLabel: UILabel!
     @IBOutlet weak var SHLabel: UILabel!
     
+    
+    
     @IBAction func getData() {
         if !updating {
             url = URL(string: urlString)!
-            getButton.setTitle("Stop", for: .normal)
+            getButton.setTitle("停止", for: .normal)
             update()
             startTimer()
             updating = true
+          
+            
         } else {
-            getButton.setTitle("Get My Data", for: .normal)
+            getButton.setTitle("获取数据", for: .normal)
             stopTimer()
             updating = false
+            
         }
     }
-    lazy var panelSFT:PanelView = PanelView()
-    lazy var panelSFH:PanelView = PanelView()
-    lazy var panelHFT:PanelView = PanelView()
-    lazy var panelHFH:PanelView = PanelView()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         // Dashboard
         Positionconf()
         view.addSubview(panelSFT)
@@ -56,8 +68,28 @@ class DataViewController: UIViewController {
         view.addSubview(panelHFT)
         view.addSubview(panelHFH)
         
+        st = StringToFloat(str: (STLabel.text!))
+        self.panelSFT.alertprogressLayer.strokeStart = st*0.01
+        self.panelHFT.alertprogressLayer.strokeStart = st*0.01
+
+        sh = StringToFloat(str: (STLabel.text!))
+        self.panelSFH.alertprogressLayer.strokeStart = sh*0.01
+        self.panelHFH.alertprogressLayer.strokeStart = sh*0.01
+        
+       
+ 
         //TabBar 监听
         NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "FirstRefresh"), object: nil)
+        
+        // SoundID
+        let filename = "alert"
+        let ext = "wav"
+        
+        if let soundUrl = Bundle.main.url(forResource: filename, withExtension: ext) {
+           AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+        }
+      
+        
     }
     deinit
     {
@@ -71,13 +103,16 @@ class DataViewController: UIViewController {
         //print("refresh")
         Positionconf()
         panelSFT.setNeedsDisplay()
+
         panelSFH.setNeedsDisplay()
+
         panelHFT.setNeedsDisplay()
         panelHFH.setNeedsDisplay()
     }
     
     func Positionconf() {
-        //  centers of dashboards
+        //threhold
+                //  centers of dashboards
         let h = CGFloat(UIScreen.main.bounds.size.width < UIScreen.main.bounds.size.height ? 120 : 70)
         let left = UIScreen.main.bounds.size.width*5/18
         let right = UIScreen.main.bounds.size.width*13/18
@@ -128,12 +163,34 @@ class DataViewController: UIViewController {
             DispatchQueue.main.async {
                 let SFT = jsonArr[0]["Tp"] as! String
                 let SFH = jsonArr[0]["Hr"] as! String
+                
                 self.SFTLabel.text = "送风温度：\(SFT)"
+                if self.StringToFloat(str: SFT) >= self.st {
+                    self.SFTLabel.textColor = UIColor.red
+                    self.alert()
+                } else {
+                    self.SFTLabel.textColor = UIColor.black
+                }
+                
+  
+
                 self.SFHLabel.text = "送风湿度：\(SFH)"
+                if self.StringToFloat(str: SFH) >= self.sh {
+                    self.SFHLabel.textColor = UIColor.red
+                    self.alert()
+                } else {
+                    self.SFHLabel.textColor = UIColor.black
+                }
+                
                 UIView.animate(withDuration: 0.3)
                 {
                     self.panelSFT.progressLayer.strokeEnd = self.StringToFloat(str: SFT) * 0.01
+                    self.panelSFT.alertprogressLayer.strokeEnd = self.panelSFT.progressLayer.strokeEnd
+
+                
                     self.panelSFH.progressLayer.strokeEnd = self.StringToFloat(str: SFH) * 0.01
+                    self.panelSFH.alertprogressLayer.strokeEnd = self.panelSFH.progressLayer.strokeEnd
+                    
                 }
             }
         }
@@ -162,9 +219,11 @@ class DataViewController: UIViewController {
         }
         return cgFloat
     }
+    
+    func alert() {
 
-    
-    
-    
+        AudioServicesPlayAlertSound(soundId)
+ 
+    }
 }
 
