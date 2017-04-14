@@ -13,9 +13,9 @@ import AudioToolbox
 class DataViewController: UIViewController {
     
     
-    let  urlString = "http://www.reebh.com:8080/readlast.php"
-    var interval = 1
-    var updating = false
+    var urlString = "http://www.reebh.com:8080/readlast.php"
+    var interval = 2
+    var isupdating = false
     var url: URL!
     var timer: Timer?
     var st: CGFloat!
@@ -41,18 +41,18 @@ class DataViewController: UIViewController {
     
     
     @IBAction func getData() {
-        if !updating {
+        if !isupdating {
             url = URL(string: urlString)!
             getButton.setTitle("停止", for: .normal)
             update()
             startTimer()
-            updating = true
+            isupdating = true
           
             
         } else {
             getButton.setTitle("获取数据", for: .normal)
             stopTimer()
-            updating = false
+            isupdating = false
             
         }
     }

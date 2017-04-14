@@ -7,12 +7,39 @@
 //
 
 import UIKit
+protocol SettingViewControllerViewControllerDelegate: class {
+    func SettingViewControllerDidCancel(_ controller: SettingViewController)
+    func SettingViewController(_ controller: SettingViewController, startdate: Date, enddate: Date)
+}
+class SettingViewController: UITableViewController {
+    var startdate = Date()
+    var enddate = Date()
+    weak var delegate: SettingViewControllerViewControllerDelegate?
+    @IBOutlet weak var startLabel: UILabel!
+    @IBOutlet weak var endLabel: UILabel!
+    @IBOutlet weak var doneBarButton: UIBarButtonItem!
+    @IBOutlet weak var startdatePicker: UIDatePicker!
+    @IBOutlet weak var enddatePicker: UIDatePicker!
+    @IBAction func satartdateChanged(_ datePicker: UIDatePicker) {
+        startdate = startdatePicker.date
+         btnconf()
+        updateDueDateLabel()
+    }
+    @IBAction func enddateChanged(_ datePicker: UIDatePicker) {
+        enddate = enddatePicker.date
+         btnconf()
+        updateDueDateLabel()
+    }
+    @IBAction func cancel() {
+          delegate?.SettingViewControllerDidCancel(self)
+    }
+    @IBAction func done() {
+            delegate?.SettingViewController(self, startdate: startdate, enddate: enddate)
+    }
 
-class SettingViewController: UIViewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        updateDueDateLabel()
     }
     
     override func didReceiveMemoryWarning() {
@@ -20,5 +47,19 @@ class SettingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func updateDueDateLabel() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        startLabel.text = formatter.string(from: startdate)
+        endLabel.text = formatter.string(from: enddate)
+    }
+    
+    func btnconf() {
+        if startdate > enddate {
+            doneBarButton.isEnabled = false
+        } else {
+            doneBarButton.isEnabled = true
+        }
+    }
     
 }

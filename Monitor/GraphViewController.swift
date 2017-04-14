@@ -90,6 +90,11 @@ class GraphViewController: UIViewController, LineChartDelegate {
      * Line chart delegate method.
      */
     func didSelectDataPoint(_ x: CGFloat, yValues: Array<CGFloat>) {
+        label1.isHidden = false
+        label2.isHidden = false
+        label3.isHidden = false
+        label4.isHidden = false
+
         label1.text = "送风温度: \(yValues[0])"
         label3.text = "送风湿度： \(yValues[1])"
         label2.text = "回风温度: \(yValues[2])"
