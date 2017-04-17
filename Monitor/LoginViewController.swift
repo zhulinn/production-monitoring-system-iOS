@@ -9,9 +9,11 @@
 
 import UIKit
 import SnapKit
-
+import Alamofire
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    
+    let urlString = "http://www.reebh.com:8080/checklogin.php"
     var txtUser: UITextField! //用户名输入框
     var txtPwd: UITextField! //密码输入款
     var formView: UIView! //登陆框视图
@@ -166,6 +168,50 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     //登录按钮点击
     func loginConfrim(){
+        //验证成功
+        if (txtUser.text != "") && (txtPwd.text != "") {
+            //self.performSegue(withIdentifier: "login", sender: self)
+            
+            //creating parameters for the post request
+            let parameters: Parameters=[
+                "name":txtUser.text!,
+                "password":txtPwd.text!,
+            ]
+            
+            //Sending http post request
+            Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON
+                {
+                    response in
+                    //printing response
+                    print(response)
+                    
+                    //getting the json value from the server
+                    if let result = response.result.value {
+                        
+                        //converting it as NSDictionary
+                        let jsonData = result as! NSDictionary
+                        
+                        if jsonData.value(forKey: "state")  as! Int == 1 {
+                            
+                        }
+                    }
+            }
+        } else {
+            errorpop()
+        }
+    }
+    func errorpop() {
+        let alertVC = UIAlertController(title: "用户名或密码错误", message: "请重新输入", preferredStyle: UIAlertControllerStyle.alert)
+        let acSure = UIAlertAction(title: "确定", style: UIAlertActionStyle.destructive)
+        let acCancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel) { (UIAlertAction) -> Void in
+            self.restore()
+        }
+        alertVC.addAction(acSure)
+        alertVC.addAction(acCancel)
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    func restore() {
         //收起键盘
         self.view.endEditing(true)
         //视图约束恢复初始设置
@@ -174,5 +220,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.view.layoutIfNeeded()
         })
     }
+    
 }
 

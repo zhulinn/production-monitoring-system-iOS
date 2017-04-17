@@ -13,7 +13,7 @@ import AudioToolbox
 class DataViewController: UIViewController {
     
     
-    var urlString = "http://www.reebh.com:8080/readlast.php"
+    var urlString = "http://www.reebh.com:8080/lastone.php"
     var interval = 2
     var isupdating = false
     var url: URL!
