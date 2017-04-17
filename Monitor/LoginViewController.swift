@@ -23,6 +23,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var topConstraint: Constraint? //登录框距顶部距离约束
     
+    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+        get {
+            return .portrait
+        }
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -111,7 +118,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         
         //登录按钮
-        self.confirmButton = UIButton()
+        self.confirmButton = UIButton(type: .system)
+  
         self.confirmButton.setTitle("登录", for: UIControlState())
         self.confirmButton.setTitleColor(UIColor.black,
                                          for: UIControlState())
@@ -130,7 +138,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         //标题label
         self.titleLabel = UILabel()
-        self.titleLabel.text = "智能检测系统"
+        self.titleLabel.text = "智能监测系统"
         self.titleLabel.textColor = UIColor.white
         self.titleLabel.font = UIFont.systemFont(ofSize: 36)
         self.view.addSubview(self.titleLabel)
@@ -161,13 +169,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         case 101:
             loginConfrim()
         default:
-            print(textField.text!)
+            restore()
         }
         return true
     }
     
     //登录按钮点击
     func loginConfrim(){
+        self.confirmButton.isEnabled = false
+        self.confirmButton.setTitle("正在登陆...", for: UIControlState())
         //验证成功
         if (txtUser.text != "") && (txtPwd.text != "") {
             //self.performSegue(withIdentifier: "login", sender: self)
@@ -177,27 +187,54 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 "name":txtUser.text!,
                 "password":txtPwd.text!,
             ]
-            
+        
             //Sending http post request
-            Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON
-                {
-                    response in
-                    //printing response
-                    print(response)
-                    
-                    //getting the json value from the server
-                    if let result = response.result.value {
+            Alamofire.request(urlString, method: .post, parameters: parameters).responseString { response in
+                if let result = response.result.value {
+                    if result == "1" {
+                        self.txtPwd.resignFirstResponder()
+                        self.txtUser.resignFirstResponder()
                         
-                        //converting it as NSDictionary
-                        let jsonData = result as! NSDictionary
                         
-                        if jsonData.value(forKey: "state")  as! Int == 1 {
-                            
+                        let alertController = UIAlertController(title: "登陆成功！", message: nil, preferredStyle: .alert)
+                        //显示提示框
+                        self.present(alertController, animated: true, completion: nil)
+                        //两秒钟后自动消失
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                            self.presentedViewController?.dismiss(animated: false, completion: nil)
+                            self.performSegue(withIdentifier: "login", sender: self)
                         }
+                        
+
+                    } else if result == "0" {
+                        self.errorpop()
                     }
+                } else {
+                    self.confirmButton.setTitle("登陆", for: UIControlState())
+                    self.presentedViewController?.dismiss(animated: false, completion: nil)
+                    
+                    let alertController = UIAlertController(title: "网络错误!", message: nil, preferredStyle: .alert)
+                    //显示提示框
+                    self.present(alertController, animated: true, completion: nil)
+                    //两秒钟后自动消失
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+                        self.confirmButton.isEnabled = true
+                        self.confirmButton.setTitle("登陆", for: UIControlState())
+                        self.presentedViewController?.dismiss(animated: false, completion: nil)
+                    }
+                }
             }
         } else {
-            errorpop()
+            self.confirmButton.isEnabled = true
+            self.confirmButton.setTitle("登陆", for: UIControlState())
+            
+            let alertController = UIAlertController(title: "请填写完整用户名与密码!", message: nil, preferredStyle: .alert)
+            //显示提示框
+            self.present(alertController, animated: true, completion: nil)
+            //两秒钟后自动消失
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            self.presentedViewController?.dismiss(animated: false, completion: nil)
+            }
         }
     }
     func errorpop() {
@@ -209,6 +246,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         alertVC.addAction(acSure)
         alertVC.addAction(acCancel)
         self.present(alertVC, animated: true, completion: nil)
+        self.confirmButton.isEnabled = true
+        self.confirmButton.setTitle("登陆", for: UIControlState())
     }
     
     func restore() {
@@ -221,5 +260,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         })
     }
     
+
 }
 

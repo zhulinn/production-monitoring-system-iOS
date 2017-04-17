@@ -157,12 +157,14 @@ class DataViewController: UIViewController {
                 
                 let data = jsonString.data(using: String.Encoding.utf8)
                 jsonArr = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String: Any]]
-                print("tp：", jsonArr[0]["Tp"]!, "    hr：", jsonArr[0]["Hr"]!)
+                print("tp：", jsonArr[0]["sfT"]!, "    hr：", jsonArr[0]["sfH"]!)
                 
             }
             DispatchQueue.main.async {
-                let SFT = jsonArr[0]["Tp"] as! String
-                let SFH = jsonArr[0]["Hr"] as! String
+                let SFT = jsonArr[0]["sfT"] as! String
+                let SFH = jsonArr[0]["sfH"] as! String
+                let HFT = jsonArr[0]["hfT"] as! String
+                let HFH = jsonArr[0]["hfH"] as! String
                 
                 self.SFTLabel.text = "送风温度：\(SFT)"
                 if self.StringToFloat(str: SFT) >= self.st {
@@ -171,9 +173,7 @@ class DataViewController: UIViewController {
                 } else {
                     self.SFTLabel.textColor = UIColor.black
                 }
-                
-  
-
+            
                 self.SFHLabel.text = "送风湿度：\(SFH)"
                 if self.StringToFloat(str: SFH) >= self.sh {
                     self.SFHLabel.textColor = UIColor.red
@@ -182,14 +182,35 @@ class DataViewController: UIViewController {
                     self.SFHLabel.textColor = UIColor.black
                 }
                 
+                self.HFTLabel.text = "回风温度：\(HFT)"
+                if self.StringToFloat(str: HFT) >= self.st {
+                    self.HFTLabel.textColor = UIColor.red
+                    self.alert()
+                } else {
+                    self.HFTLabel.textColor = UIColor.black
+                }
+                
+                self.HFHLabel.text = "回风湿度：\(HFH)"
+                if self.StringToFloat(str: HFH) >= self.sh {
+                    self.HFHLabel.textColor = UIColor.red
+                    self.alert()
+                } else {
+                    self.HFHLabel.textColor = UIColor.black
+                }
+                
                 UIView.animate(withDuration: 0.3)
                 {
                     self.panelSFT.progressLayer.strokeEnd = self.StringToFloat(str: SFT) * 0.01
                     self.panelSFT.alertprogressLayer.strokeEnd = self.panelSFT.progressLayer.strokeEnd
 
-                
                     self.panelSFH.progressLayer.strokeEnd = self.StringToFloat(str: SFH) * 0.01
                     self.panelSFH.alertprogressLayer.strokeEnd = self.panelSFH.progressLayer.strokeEnd
+                    
+                    self.panelHFT.progressLayer.strokeEnd = self.StringToFloat(str: HFT) * 0.01
+                    self.panelHFT.alertprogressLayer.strokeEnd = self.panelHFT.progressLayer.strokeEnd
+                    
+                    self.panelHFH.progressLayer.strokeEnd = self.StringToFloat(str: HFH) * 0.01
+                    self.panelHFH.alertprogressLayer.strokeEnd = self.panelHFH.progressLayer.strokeEnd
                     
                 }
             }
