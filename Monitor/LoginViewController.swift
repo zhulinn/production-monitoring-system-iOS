@@ -187,6 +187,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //登录按钮点击
     func loginConfrim(){
         self.confirmButton.isEnabled = false
+        self.txtPwd.isEnabled = false
+        self.txtUser.isEnabled = false
+    
         self.confirmButton.setTitle("正在登陆...", for: UIControlState())
         //验证成功
         if (txtUser.text != "") && (txtPwd.text != "") {
@@ -214,8 +217,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             self.presentedViewController?.dismiss(animated: false, completion: nil)
                             self.performSegue(withIdentifier: "login", sender: self)
                         }
-                        
-
                     } else if result == "0" {
                         self.errorpop()
                     } else {
@@ -227,6 +228,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
         } else {
             self.confirmButton.isEnabled = true
+            self.txtPwd.isEnabled = true
+            self.txtUser.isEnabled = true
             self.confirmButton.setTitle("登陆", for: UIControlState())
             
             let alertController = UIAlertController(title: "请填写完整用户名与密码!", message: nil, preferredStyle: .alert)
@@ -249,6 +252,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         //两秒钟后自动消失
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
             self.confirmButton.isEnabled = true
+            self.txtPwd.isEnabled = true
+            self.txtUser.isEnabled = true
             self.confirmButton.setTitle("登陆", for: UIControlState())
             self.presentedViewController?.dismiss(animated: false, completion: nil)
         }
@@ -265,6 +270,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         alertVC.addAction(acCancel)
         self.present(alertVC, animated: true, completion: nil)
         self.confirmButton.isEnabled = true
+        self.txtPwd.isEnabled = true
+        self.txtUser.isEnabled = true
         self.confirmButton.setTitle("登陆", for: UIControlState())
     }
     
