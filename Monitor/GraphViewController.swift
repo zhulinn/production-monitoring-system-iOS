@@ -8,15 +8,23 @@
 
 import UIKit
 import QuartzCore
-class GraphViewController: UIViewController, LineChartDelegate {
+
+
+
+class GraphViewController: UIViewController, LineChartDelegate, DataViewControllerDelegate {
     
     var timer :Timer?
     
-    var data = [CGFloat]()
-    var data2 = [CGFloat]()
-    var data3 = [CGFloat]()
-    var data4 = [CGFloat]()
-    var xLabels = [String]()
+    var records = [[String: Any]]()
+    var isfirst = true
+    let url20 = URL(string: "http://www.reebh.com:8080/lasttwenty.php")!
+    var data1 = [CGFloat(0.0), CGFloat(0)]
+    var data2 = [CGFloat(0.0), CGFloat(0)]
+    var data3 = [CGFloat(0.0), CGFloat(0)]
+    var data4 = [CGFloat(0.0), CGFloat(0)]
+ //   var xLabels = [String]()
+    
+    
     @IBOutlet weak var lineChart: LineChart!
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
@@ -24,18 +32,14 @@ class GraphViewController: UIViewController, LineChartDelegate {
     @IBOutlet weak var label4: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        data = [3, 4, -100, 11, 13, 15,1,  20, 4, -2,3, 5,1,  20, 4, -2,-100, 100]
-        data2 = [1,  20, 4, -2,3, 5, 4, -2, 11, 13, 15,1, 4, -2, 11, 13, 15,1]
-        data3 = [3, 4, -2, 11, 13, 15,1,  20, 4, -2,3, 5,1,  20, 4, -2,3, 5]
-        data4 = [1,  20, 4, -2,3, 5, 4, -2, 11, 13, 15,1, 4, -2, 11, 13, 15,1]
-        //xLabels = ["1", "2", "3", "4", "5", "6","1", "2", "3", "4", "5", "6","1", "2", "3", "4", "5", "6"]
-        
+        let navigationController0 = self.tabBarController?.viewControllers?[0] as! UINavigationController
+        let controller0 = navigationController0.topViewController as! DataViewController
+        controller0.delegate = self
         
         lineChart.animation.enabled = false
         lineChart.area = true
         lineChart.x.labels.visible = false
-        lineChart.x.grid.count = CGFloat(data.count)
+        lineChart.x.grid.count = CGFloat(data1.count)
         lineChart.y.grid.count = 10
        //lineChart.x.labels.values = xLabels
         lineChart.y.labels.visible = true
@@ -49,10 +53,9 @@ class GraphViewController: UIViewController, LineChartDelegate {
         lineChart.dots.innerRadiusHighlighted = 6
         lineChart.dots.outerRadiusHighlighted = 8
         
-        lineChart.area = true
-        
-        
-        lineChart.addLine(data)
+        lineChart.area = false
+
+        lineChart.addLine(data1)
         lineChart.addlinename("送风温度")
         lineChart.addLine(data2)
         lineChart.addlinename("送风湿度")
@@ -60,32 +63,12 @@ class GraphViewController: UIViewController, LineChartDelegate {
         lineChart.addlinename("回风温度")
         lineChart.addLine(data4)
         lineChart.addlinename("回风湿度")
+     
         lineChart.delegate = self
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "SecondRefresh"), object: nil)
     }
     
-    func update() {
-        data.remove(at: 0)
-        data2.remove(at: 0)
-        data3.remove(at: 0)
-        data4.remove(at: 0)
-     //   xLabels.remove(at: 0)
-      //  xLabels.append("\(arc4random_uniform(100))")
-        data.append(CGFloat(arc4random_uniform(100)) )
-        data2.append(CGFloat(arc4random_uniform(100)))
-        data3.append(CGFloat(arc4random_uniform(100)) )
-        data4.append(CGFloat(arc4random_uniform(100)))
-        lineChart.clear()
-        lineChart.addLine(data)
-        lineChart.addLine(data2)
-        lineChart.addLine(data3)
-        lineChart.addLine(data4)
-        //lineChart.x.labels.values = xLabels
-        if let chart = lineChart {
-            chart.setNeedsDisplay()
-        }    }
-    
+
     /**
      * Line chart delegate method.
      */
@@ -110,10 +93,91 @@ class GraphViewController: UIViewController, LineChartDelegate {
       refresh()
     }
     func refresh() {
-        //print("refresh")
         if let chart = lineChart {
             chart.setNeedsDisplay()
         }
     }
     
+    func performStoreRequest(with url: URL) -> String? {
+        do {
+            return try String(contentsOf: url, encoding: .utf8)
+        } catch {
+            print("Download Error: \(error)")
+            return nil
+        }
+    }
+    
+    func datainit() {
+        if let jsonString = self.performStoreRequest(with: self.url20) {
+            let data = jsonString.data(using: String.Encoding.utf8)
+            records = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String: Any]]
+
+            self.data1.removeAll()
+            self.data2.removeAll()
+            self.data3.removeAll()
+            self.data4.removeAll()
+            
+            for record in records.reversed() {
+                data1.append(StringToFloat(str: record["sfT"] as! String))
+                data2.append(StringToFloat(str: record["sfH"] as! String))
+                data3.append(StringToFloat(str: record["hfT"] as! String))
+                data4.append(StringToFloat(str: record["hfH"] as! String))
+            }
+            self.lineChart.addLine(self.data1)
+            self.lineChart.addLine(self.data2)
+            self.lineChart.addLine(self.data3)
+            self.lineChart.addLine(self.data4)
+            
+            
+        }
+       
+    }
+    func StringToFloat(str:String)->(CGFloat){
+        
+        let string = str
+        var cgFloat: CGFloat = 0
+        
+        
+        if let doubleValue = Double(string)
+        {
+            cgFloat = CGFloat(doubleValue)
+        }
+        return cgFloat
+    }
+    
+    func gotrecord(_ controller: DataViewController, record: [String:Any]) {
+        if isfirst {
+            isfirst = false
+            let queue = DispatchQueue.global()
+            queue.async {
+                self.datainit()
+                self.lineChart.clear()
+                self.refresh()
+            }
+
+            
+        }
+        if data1.count == 20 {
+            data1.remove(at: 0)
+            data2.remove(at: 0)
+            data3.remove(at: 0)
+            data4.remove(at: 0)
+            
+            data1.append(StringToFloat(str: record["sfT"] as! String))
+            data2.append(StringToFloat(str: record["sfH"] as! String))
+            data3.append(StringToFloat(str: record["hfT"] as! String))
+            data4.append(StringToFloat(str: record["hfH"] as! String))
+            
+            lineChart.clear()
+            lineChart.addLine(data1)
+            lineChart.addLine(data2)
+            lineChart.addLine(data3)
+            lineChart.addLine(data4)
+            //lineChart.x.labels.values = xLabels
+            
+            refresh()
+        }
+    }
+    
+
 }

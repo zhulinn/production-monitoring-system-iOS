@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B9067EAF1E9830F100744F8B /* alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = B9067EAE1E9830F100744F8B /* alert.wav */; };
-		B92A35C51E9FF18C0032C2BB /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92A35C41E9FF18C0032C2BB /* Setting.swift */; };
 		B92AD34A1E9642990048E613 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92AD3491E9642990048E613 /* TabBarController.swift */; };
 		B9314A0E1E929CDF00626CCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9314A0D1E929CDF00626CCB /* AppDelegate.swift */; };
 		B9314A101E929CDF00626CCB /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9314A0F1E929CDF00626CCB /* DataViewController.swift */; };
@@ -19,6 +18,9 @@
 		B9314A241E929F8800626CCB /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9314A231E929F8800626CCB /* HistoryViewController.swift */; };
 		B9314A261E929FA200626CCB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9314A251E929FA200626CCB /* SettingViewController.swift */; };
 		B94D2C891E9547210080DFA7 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94D2C881E9547210080DFA7 /* PanelView.swift */; };
+		B9C441AE1EA62DEF000F6EB6 /* AlertSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C441AD1EA62DEF000F6EB6 /* AlertSettingViewController.swift */; };
+		B9C441B11EA6782A000F6EB6 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C441B01EA6782A000F6EB6 /* AccountViewController.swift */; };
+		B9C441B31EA683DB000F6EB6 /* PwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C441B21EA683DB000F6EB6 /* PwdViewController.swift */; };
 		B9D7AF9F1EA0D4A9000184C0 /* UICollectionGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D7AF9D1EA0D4A9000184C0 /* UICollectionGridViewController.swift */; };
 		B9D7AFA01EA0D4A9000184C0 /* UICollectionGridViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D7AF9E1EA0D4A9000184C0 /* UICollectionGridViewLayout.swift */; };
 		B9D7AFB91EA11C78000184C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D7AFB81EA11C78000184C0 /* Assets.xcassets */; };
@@ -70,7 +72,6 @@
 		7E3C1D4F88487F133407A882 /* Pods-Monitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monitor.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monitor/Pods-Monitor.release.xcconfig"; sourceTree = "<group>"; };
 		9D6E3CFA8B3EA1DB582BC184 /* Pods_Monitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9067EAE1E9830F100744F8B /* alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alert.wav; sourceTree = "<group>"; };
-		B92A35C41E9FF18C0032C2BB /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		B92AD3491E9642990048E613 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B9314A0A1E929CDF00626CCB /* Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9314A0D1E929CDF00626CCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +84,9 @@
 		B9314A231E929F8800626CCB /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		B9314A251E929FA200626CCB /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B94D2C881E9547210080DFA7 /* PanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
+		B9C441AD1EA62DEF000F6EB6 /* AlertSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSettingViewController.swift; sourceTree = "<group>"; };
+		B9C441B01EA6782A000F6EB6 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		B9C441B21EA683DB000F6EB6 /* PwdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwdViewController.swift; sourceTree = "<group>"; };
 		B9D7AF9D1EA0D4A9000184C0 /* UICollectionGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionGridViewController.swift; sourceTree = "<group>"; };
 		B9D7AF9E1EA0D4A9000184C0 /* UICollectionGridViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionGridViewLayout.swift; sourceTree = "<group>"; };
 		B9D7AFB81EA11C78000184C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,16 +152,18 @@
 				B9D7AFBA1EA11F42000184C0 /* LoginViewController.swift */,
 				B92AD3491E9642990048E613 /* TabBarController.swift */,
 				B9314A0F1E929CDF00626CCB /* DataViewController.swift */,
+				B9C441AD1EA62DEF000F6EB6 /* AlertSettingViewController.swift */,
 				B9314A111E929CDF00626CCB /* GraphViewController.swift */,
 				B9314A231E929F8800626CCB /* HistoryViewController.swift */,
 				B9314A251E929FA200626CCB /* SettingViewController.swift */,
+				B9C441B01EA6782A000F6EB6 /* AccountViewController.swift */,
+				B9C441B21EA683DB000F6EB6 /* PwdViewController.swift */,
 				B9314A211E929D1700626CCB /* LineChart.swift */,
 				B94D2C881E9547210080DFA7 /* PanelView.swift */,
 				B9D7AF9D1EA0D4A9000184C0 /* UICollectionGridViewController.swift */,
 				B9D7AF9E1EA0D4A9000184C0 /* UICollectionGridViewLayout.swift */,
 				B9314A131E929CDF00626CCB /* Main.storyboard */,
 				B9D7AFB81EA11C78000184C0 /* Assets.xcassets */,
-				B92A35C41E9FF18C0032C2BB /* Setting.swift */,
 				B9314A181E929CDF00626CCB /* LaunchScreen.storyboard */,
 				B9314A1B1E929CDF00626CCB /* Info.plist */,
 			);
@@ -326,6 +332,7 @@
 			files = (
 				B9D7AFBB1EA11F42000184C0 /* LoginViewController.swift in Sources */,
 				B9314A221E929D1700626CCB /* LineChart.swift in Sources */,
+				B9C441B11EA6782A000F6EB6 /* AccountViewController.swift in Sources */,
 				B92AD34A1E9642990048E613 /* TabBarController.swift in Sources */,
 				B9314A121E929CDF00626CCB /* GraphViewController.swift in Sources */,
 				B9314A0E1E929CDF00626CCB /* AppDelegate.swift in Sources */,
@@ -333,9 +340,10 @@
 				B9314A241E929F8800626CCB /* HistoryViewController.swift in Sources */,
 				B94D2C891E9547210080DFA7 /* PanelView.swift in Sources */,
 				B9314A101E929CDF00626CCB /* DataViewController.swift in Sources */,
+				B9C441B31EA683DB000F6EB6 /* PwdViewController.swift in Sources */,
 				B9314A261E929FA200626CCB /* SettingViewController.swift in Sources */,
+				B9C441AE1EA62DEF000F6EB6 /* AlertSettingViewController.swift in Sources */,
 				B9D7AFA01EA0D4A9000184C0 /* UICollectionGridViewLayout.swift in Sources */,
-				B92A35C51E9FF18C0032C2BB /* Setting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

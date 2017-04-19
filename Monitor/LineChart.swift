@@ -435,7 +435,7 @@ open class LineChart: UIView {
         var data = self.dataStore[lineIndex]
         let path = UIBezierPath()
         
-        colors[lineIndex].withAlphaComponent(0.2).setFill()
+        colors[lineIndex].withAlphaComponent(0.3).setFill()
         // move to origin
         path.move(to: CGPoint(x: x.axis.inset, y: self.bounds.height - self.y.scale(0) - y.axis.inset))
         // add line to first data point

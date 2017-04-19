@@ -7,14 +7,14 @@
 //
 
 import UIKit
-protocol SettingViewControllerViewControllerDelegate: class {
+protocol SettingViewControllerDelegate: class {
     func SettingViewControllerDidCancel(_ controller: SettingViewController)
-    func SettingViewController(_ controller: SettingViewController, startdate: Date, enddate: Date)
+    func SettingViewController(_ controller: SettingViewController, startString: String, endString: String)
 }
 class SettingViewController: UITableViewController {
     var startdate = Date()
     var enddate = Date()
-    weak var delegate: SettingViewControllerViewControllerDelegate?
+    weak var delegate: SettingViewControllerDelegate?
     @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var endLabel: UILabel!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
@@ -22,7 +22,7 @@ class SettingViewController: UITableViewController {
     @IBOutlet weak var enddatePicker: UIDatePicker!
     @IBAction func satartdateChanged(_ datePicker: UIDatePicker) {
         startdate = startdatePicker.date
-         btnconf()
+        btnconf()
         updateDueDateLabel()
     }
     @IBAction func enddateChanged(_ datePicker: UIDatePicker) {
@@ -34,7 +34,7 @@ class SettingViewController: UITableViewController {
           delegate?.SettingViewControllerDidCancel(self)
     }
     @IBAction func done() {
-            delegate?.SettingViewController(self, startdate: startdate, enddate: enddate)
+            delegate?.SettingViewController(self, startString: startLabel.text!, endString: endLabel.text!)
     }
 
     override func viewDidLoad() {
@@ -49,7 +49,7 @@ class SettingViewController: UITableViewController {
     
     func updateDueDateLabel() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         startLabel.text = formatter.string(from: startdate)
         endLabel.text = formatter.string(from: enddate)
     }

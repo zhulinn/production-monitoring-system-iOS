@@ -10,8 +10,16 @@
 import UIKit
 import SnapKit
 import Alamofire
+
+class account {
+    static var name = ""
+}
+
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    @IBAction func viewClick(_ sender: AnyObject) {
+        restore()
+    }
     
     let urlString = "http://www.reebh.com:8080/checklogin.php"
     var txtUser: UITextField! //用户名输入框
@@ -82,6 +90,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.txtUser.leftView = UIView(frame:CGRect(x: 0, y: 0, width: 44, height: 44))
         self.txtUser.leftViewMode = UITextFieldViewMode.always
         self.txtUser.returnKeyType = UIReturnKeyType.next
+        self.txtUser.enablesReturnKeyAutomatically = true
         
         //用户名输入框左侧图标
         self.txtUser.leftView!.addSubview(imgLock1)
@@ -102,8 +111,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.txtPwd.tag = 101
         self.txtPwd.leftView = UIView(frame:CGRect(x: 0, y: 0, width: 44, height: 44))
         self.txtPwd.leftViewMode = UITextFieldViewMode.always
-        self.txtPwd.returnKeyType = UIReturnKeyType.next
+        self.txtPwd.returnKeyType = UIReturnKeyType.done
         self.txtPwd.isSecureTextEntry = true
+        self.txtUser.enablesReturnKeyAutomatically = true
+
         
         //密码输入框左侧图标
         self.txtPwd.leftView!.addSubview(imgLock2)
@@ -165,11 +176,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let tag = textField.tag
         switch tag {
         case 100:
+            
             self.txtPwd.becomeFirstResponder()
         case 101:
             loginConfrim()
         default:
-            restore()
+            break
         }
         return true
     }
@@ -185,7 +197,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             //creating parameters for the post request
             let parameters: Parameters=[
                 "name":txtUser.text!,
-                "password":txtPwd.text!,
+                "password":txtPwd.text!
             ]
         
             //Sending http post request
@@ -194,7 +206,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     if result == "1" {
                         self.txtPwd.resignFirstResponder()
                         self.txtUser.resignFirstResponder()
-                        
+                        account.name = self.txtUser.text!
                         
                         let alertController = UIAlertController(title: "登陆成功！", message: nil, preferredStyle: .alert)
                         //显示提示框
@@ -208,20 +220,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
                     } else if result == "0" {
                         self.errorpop()
+                    } else {
+                        self.neterror()
                     }
                 } else {
-                    self.confirmButton.setTitle("登陆", for: UIControlState())
-                    self.presentedViewController?.dismiss(animated: false, completion: nil)
-                    
-                    let alertController = UIAlertController(title: "网络错误!", message: nil, preferredStyle: .alert)
-                    //显示提示框
-                    self.present(alertController, animated: true, completion: nil)
-                    //两秒钟后自动消失
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-                        self.confirmButton.isEnabled = true
-                        self.confirmButton.setTitle("登陆", for: UIControlState())
-                        self.presentedViewController?.dismiss(animated: false, completion: nil)
-                    }
+                    self.neterror()
                 }
             }
         } else {
@@ -237,6 +240,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
+    func neterror() {
+        self.confirmButton.setTitle("登陆", for: UIControlState())
+        self.presentedViewController?.dismiss(animated: false, completion: nil)
+        
+        let alertController = UIAlertController(title: "网络错误!", message: nil, preferredStyle: .alert)
+        //显示提示框
+        self.present(alertController, animated: true, completion: nil)
+        //两秒钟后自动消失
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            self.confirmButton.isEnabled = true
+            self.confirmButton.setTitle("登陆", for: UIControlState())
+            self.presentedViewController?.dismiss(animated: false, completion: nil)
+        }
+        
+    }
+    
     func errorpop() {
         let alertVC = UIAlertController(title: "用户名或密码错误", message: "请重新输入", preferredStyle: UIAlertControllerStyle.alert)
         let acSure = UIAlertAction(title: "确定", style: UIAlertActionStyle.destructive)
@@ -260,6 +280,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         })
     }
     
+
 
 }
 

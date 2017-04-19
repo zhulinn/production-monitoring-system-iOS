@@ -10,9 +10,13 @@
 import UIKit
 import AudioToolbox
 
-class DataViewController: UIViewController {
+protocol DataViewControllerDelegate: class {
+    func gotrecord(_ controller: DataViewController, record: [String:Any])
+}
+
+class DataViewController: UIViewController, AlertSettingViewControllerDelegate{
     
-    
+    weak var delegate: DataViewControllerDelegate?
     var urlString = "http://www.reebh.com:8080/lastone.php"
     var interval = 2
     var isupdating = false
@@ -60,7 +64,6 @@ class DataViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         // Dashboard
         Positionconf()
         view.addSubview(panelSFT)
@@ -68,13 +71,7 @@ class DataViewController: UIViewController {
         view.addSubview(panelHFT)
         view.addSubview(panelHFH)
         
-        st = StringToFloat(str: (STLabel.text!))
-        self.panelSFT.alertprogressLayer.strokeStart = st*0.01
-        self.panelHFT.alertprogressLayer.strokeStart = st*0.01
-
-        sh = StringToFloat(str: (STLabel.text!))
-        self.panelSFH.alertprogressLayer.strokeStart = sh*0.01
-        self.panelHFH.alertprogressLayer.strokeStart = sh*0.01
+        threholdconf()
         
        
  
@@ -157,15 +154,14 @@ class DataViewController: UIViewController {
                 
                 let data = jsonString.data(using: String.Encoding.utf8)
                 jsonArr = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String: Any]]
-                print("tp：", jsonArr[0]["sfT"]!, "    hr：", jsonArr[0]["sfH"]!)
-                
             }
             DispatchQueue.main.async {
+                self.delegate?.gotrecord(self, record: jsonArr[0])
                 let SFT = jsonArr[0]["sfT"] as! String
                 let SFH = jsonArr[0]["sfH"] as! String
                 let HFT = jsonArr[0]["hfT"] as! String
                 let HFH = jsonArr[0]["hfH"] as! String
-                
+
                 self.SFTLabel.text = "送风温度：\(SFT)"
                 if self.StringToFloat(str: SFT) >= self.st {
                     self.SFTLabel.textColor = UIColor.red
@@ -218,7 +214,15 @@ class DataViewController: UIViewController {
         
     }
     
-    
+    func threholdconf() {
+        st = StringToFloat(str: (STLabel.text!))
+        self.panelSFT.alertprogressLayer.strokeStart = st*0.01
+        self.panelHFT.alertprogressLayer.strokeStart = st*0.01
+        
+        sh = StringToFloat(str: (SHLabel.text!))
+        self.panelSFH.alertprogressLayer.strokeStart = sh*0.01
+        self.panelHFH.alertprogressLayer.strokeStart = sh*0.01
+    }
     
     func performStoreRequest(with url: URL) -> String? {
         do {
@@ -245,6 +249,31 @@ class DataViewController: UIViewController {
 
         AudioServicesPlayAlertSound(soundId)
  
+    }
+    
+    func AlertSettingViewControllerDidCancel(_ controller: AlertSettingViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    func AlertSettingViewController(_ controller: AlertSettingViewController, st: String, sh: String) {
+        dismiss(animated: true, completion: nil)
+        STLabel.text = st
+        SHLabel.text = sh
+        threholdconf()
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // 1
+        if segue.identifier == "AlertSetting" {
+            // 2
+            let navigationController = segue.destination  as! UINavigationController
+            
+            // 3
+            let controller = navigationController.topViewController as! AlertSettingViewController
+            // 4
+            controller.delegate = self
+            controller.temString = self.STLabel.text
+            controller.humString = self.SHLabel.text
+
+        }
     }
 }
 

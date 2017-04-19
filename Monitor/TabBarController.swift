@@ -10,11 +10,11 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.selectedIndex = 1
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        //这边不用这个代码swift自动集成了代理 直接用就可以了
-        //        self.tabBar.delegate = self
-        
     }
     
     //代理点击事件
