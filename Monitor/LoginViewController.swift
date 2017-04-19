@@ -42,9 +42,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         //视图背景色
-        self.view.backgroundColor = UIColor(red: 1/255, green: 170/255, blue: 235/255,
-                                            alpha: 1)
-        
+        self.view.backgroundColor = UIColor(red: 1/255, green: 170/255, blue: 235/255, alpha: 1)
         //登录框高度
         let formViewHeight = 90
         //登录框背景
@@ -149,7 +147,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         //标题label
         self.titleLabel = UILabel()
-        self.titleLabel.text = "智能监测系统"
+        self.titleLabel.text = "智能控制系统"
         self.titleLabel.textColor = UIColor.white
         self.titleLabel.font = UIFont.systemFont(ofSize: 36)
         self.view.addSubview(self.titleLabel)

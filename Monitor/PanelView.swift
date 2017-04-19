@@ -177,7 +177,7 @@ class PanelView: UIView {
         progressLayer.strokeColor = UIColor.cyan.cgColor
         progressLayer.path = progressPath.cgPath
         progressLayer.strokeStart = 0
-        progressLayer.strokeEnd = 0.70
+        progressLayer.strokeEnd = 0
         layer.addSublayer(progressLayer)
 
         
