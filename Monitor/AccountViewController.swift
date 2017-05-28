@@ -22,7 +22,10 @@ class AccountViewController: UITableViewController{
             let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
             let deleteAction = UIAlertAction(title: "注销", style: .destructive, handler: {
                 action in
+          //  self.dismiss(animated: true, completion: nil)
+
                 self.performSegue(withIdentifier: "logout", sender: self)
+    
             })
             alertController.addAction(cancelAction)
             alertController.addAction(deleteAction)

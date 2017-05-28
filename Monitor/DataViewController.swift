@@ -18,7 +18,7 @@ class DataViewController: UIViewController, AlertSettingViewControllerDelegate{
     
     weak var delegate: DataViewControllerDelegate?
     var urlString = "http://www.reebh.com:8080/lastone.php"
-    var interval = 2
+    var interval = 3
     var isupdating = false
     var url: URL!
     var timer: Timer?

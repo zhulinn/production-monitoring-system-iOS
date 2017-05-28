@@ -1,0 +1,132 @@
+
+/* Class = "UINavigationItem"; title = "温湿度历史数据"; ObjectID = "0Wi-zb-XCz"; */
+"0Wi-zb-XCz.title" = "温湿度历史数据";
+
+/* Class = "UILabel"; text = "起始时间"; ObjectID = "0h0-Pd-fBy"; */
+"0h0-Pd-fBy.text" = "起始时间";
+
+/* Class = "UINavigationItem"; title = "修改密码"; ObjectID = "1fc-uM-KD8"; */
+"1fc-uM-KD8.title" = "修改密码";
+
+/* Class = "UILabel"; text = "确认密码"; ObjectID = "320-cP-rqc"; */
+"320-cP-rqc.text" = "确认密码";
+
+/* Class = "UITextField"; text = "admin"; ObjectID = "5CF-WT-d7p"; */
+"5CF-WT-d7p.text" = "admin";
+
+/* Class = "UILabel"; text = "80"; ObjectID = "64F-wB-8zG"; */
+"64F-wB-8zG.text" = "80";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "79y-oq-Yg7"; */
+"79y-oq-Yg7.text" = "Detail";
+
+/* Class = "UITextField"; text = "80.00"; ObjectID = "7eJ-06-2Hv"; */
+"7eJ-06-2Hv.text" = "80.00";
+
+/* Class = "UIButton"; normalTitle = "获取数据"; ObjectID = "7rJ-2z-BxJ"; */
+"7rJ-2z-BxJ.normalTitle" = "获取数据";
+
+/* Class = "UILabel"; text = "送分温度：88.88"; ObjectID = "8Jz-dp-t1f"; */
+"8Jz-dp-t1f.text" = "送分温度：88.88";
+
+/* Class = "UITextField"; text = "80.00"; ObjectID = "8sQ-ew-9t4"; */
+"8sQ-ew-9t4.text" = "80.00";
+
+/* Class = "UINavigationItem"; title = "温湿度实时显示"; ObjectID = "ApZ-Cx-DSG"; */
+"ApZ-Cx-DSG.title" = "温湿度实时显示";
+
+/* Class = "UINavigationItem"; title = "用户设置"; ObjectID = "ClU-c9-kiV"; */
+"ClU-c9-kiV.title" = "用户设置";
+
+/* Class = "UILabel"; text = "送分温度：88.88"; ObjectID = "DAq-g0-bfS"; */
+"DAq-g0-bfS.text" = "送分温度：88.88";
+
+/* Class = "UILabel"; text = "修改密码"; ObjectID = "DtE-9j-SzE"; */
+"DtE-9j-SzE.text" = "修改密码";
+
+/* Class = "UITabBarItem"; title = "实时数据"; ObjectID = "F09-5p-SGl"; */
+"F09-5p-SGl.title" = "实时数据";
+
+/* Class = "UILabel"; text = "原密码"; ObjectID = "G4b-Mo-Y6R"; */
+"G4b-Mo-Y6R.text" = "原密码";
+
+/* Class = "UIBarButtonItem"; title = "设置"; ObjectID = "IzY-kB-e67"; */
+"IzY-kB-e67.title" = "设置";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "LBV-ck-WRd"; */
+"LBV-ck-WRd.text" = "Detail";
+
+/* Class = "UILabel"; text = "80"; ObjectID = "MBk-nT-LO9"; */
+"MBk-nT-LO9.text" = "80";
+
+/* Class = "UILabel"; text = "截止时间"; ObjectID = "NuG-hA-ie4"; */
+"NuG-hA-ie4.text" = "截止时间";
+
+/* Class = "UILabel"; text = "送分温度：88.88"; ObjectID = "OIK-kt-IGf"; */
+"OIK-kt-IGf.text" = "送分温度：88.88";
+
+/* Class = "UILabel"; text = "回风温度：00.00"; ObjectID = "PHq-q4-abs"; */
+"PHq-q4-abs.text" = "回风温度：00.00";
+
+/* Class = "UITabBarItem"; title = "实时曲线"; ObjectID = "QWK-1a-Q5y"; */
+"QWK-1a-Q5y.title" = "实时曲线";
+
+/* Class = "UILabel"; text = "用户名"; ObjectID = "RpH-nH-Ea8"; */
+"RpH-nH-Ea8.text" = "用户名";
+
+/* Class = "UIBarButtonItem"; title = "查询"; ObjectID = "SVN-nh-A4m"; */
+"SVN-nh-A4m.title" = "查询";
+
+/* Class = "UILabel"; text = "警报温度(℃)"; ObjectID = "SdM-ZD-4Fp"; */
+"SdM-ZD-4Fp.text" = "警报温度(℃)";
+
+/* Class = "UILabel"; text = "送风温度：00.00"; ObjectID = "T8R-k0-1OH"; */
+"T8R-k0-1OH.text" = "送风温度：00.00";
+
+/* Class = "UILabel"; text = "注销"; ObjectID = "Tdo-CF-rAJ"; */
+"Tdo-CF-rAJ.text" = "注销";
+
+/* Class = "UILabel"; text = "送风湿度：00.00"; ObjectID = "TgP-wq-yRz"; */
+"TgP-wq-yRz.text" = "送风湿度：00.00";
+
+/* Class = "UILabel"; text = "警报湿度(%RH)"; ObjectID = "Vu6-Qn-IR0"; */
+"Vu6-Qn-IR0.text" = "警报湿度(%RH)";
+
+/* Class = "UITextField"; placeholder = "输入原密码"; ObjectID = "awI-eK-Ebx"; */
+"awI-eK-Ebx.placeholder" = "输入原密码";
+
+/* Class = "UINavigationItem"; title = "参数设定"; ObjectID = "beZ-38-VNy"; */
+"beZ-38-VNy.title" = "参数设定";
+
+/* Class = "UILabel"; text = "修改密码"; ObjectID = "byU-f5-mVU"; */
+"byU-f5-mVU.text" = "修改密码";
+
+/* Class = "UINavigationItem"; title = "参数设定"; ObjectID = "jLo-k2-ZjO"; */
+"jLo-k2-ZjO.title" = "参数设定";
+
+/* Class = "UINavigationItem"; title = "温湿度实时曲线"; ObjectID = "pTz-nc-K8a"; */
+"pTz-nc-K8a.title" = "温湿度实时曲线";
+
+/* Class = "UITabBarItem"; title = "用户设置"; ObjectID = "pxN-6t-ISR"; */
+"pxN-6t-ISR.title" = "用户设置";
+
+/* Class = "UITextField"; placeholder = "输入新密码"; ObjectID = "qEQ-eJ-VJ9"; */
+"qEQ-eJ-VJ9.placeholder" = "输入新密码";
+
+/* Class = "UITabBarItem"; title = "历史数据"; ObjectID = "uBN-kP-zdX"; */
+"uBN-kP-zdX.title" = "历史数据";
+
+/* Class = "UILabel"; text = "回风湿度：00.00"; ObjectID = "wOv-Vv-B0H"; */
+"wOv-Vv-B0H.text" = "回风湿度：00.00";
+
+/* Class = "UILabel"; text = "送分温度：88.88"; ObjectID = "xxT-jZ-01L"; */
+"xxT-jZ-01L.text" = "送分温度：88.88";
+
+/* Class = "UITextField"; placeholder = "确认新密码"; ObjectID = "y4A-Tk-kLm"; */
+"y4A-Tk-kLm.placeholder" = "确认新密码";
+
+/* Class = "UILabel"; text = "警报温度(℃)"; ObjectID = "zLQ-BV-Tjh"; */
+"zLQ-BV-Tjh.text" = "警报温度(℃)";
+
+/* Class = "UILabel"; text = "警报湿度(%RH)"; ObjectID = "zQk-iM-6Ri"; */
+"zQk-iM-6Ri.text" = "警报湿度(%RH)";

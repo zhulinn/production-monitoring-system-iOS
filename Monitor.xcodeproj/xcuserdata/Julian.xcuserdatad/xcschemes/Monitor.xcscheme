@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B9314A091E929CDF00626CCB"
-               BuildableName = "Monitor.app"
-               BlueprintName = "Monitor"
+               BuildableName = "&#9;&#9;.app"
+               BlueprintName = "&#9;&#9;"
                ReferencedContainer = "container:Monitor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B9314A091E929CDF00626CCB"
-            BuildableName = "Monitor.app"
-            BlueprintName = "Monitor"
+            BuildableName = "&#9;&#9;.app"
+            BlueprintName = "&#9;&#9;"
             ReferencedContainer = "container:Monitor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,8 +56,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B9314A091E929CDF00626CCB"
-            BuildableName = "Monitor.app"
-            BlueprintName = "Monitor"
+            BuildableName = "&#9;&#9;.app"
+            BlueprintName = "&#9;&#9;"
             ReferencedContainer = "container:Monitor.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -82,8 +82,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B9314A091E929CDF00626CCB"
-            BuildableName = "Monitor.app"
-            BlueprintName = "Monitor"
+            BuildableName = "&#9;&#9;.app"
+            BlueprintName = "&#9;&#9;"
             ReferencedContainer = "container:Monitor.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

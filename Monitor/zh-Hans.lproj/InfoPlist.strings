@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  Monitor
+
+  Created by Julian Zhu on 5/3/17.
+  Copyright © 2017 Lin Zhu. All rights reserved.
+*/
+
+
+CFBundleDisplayName = "智能监测";

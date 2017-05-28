@@ -215,7 +215,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         //两秒钟后自动消失
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
                             self.presentedViewController?.dismiss(animated: false, completion: nil)
+                            
                             self.performSegue(withIdentifier: "login", sender: self)
+                            
+                            
                         }
                     } else if result == "0" {
                         self.errorpop()

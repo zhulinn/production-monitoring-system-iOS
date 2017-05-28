@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B9067EAF1E9830F100744F8B /* alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = B9067EAE1E9830F100744F8B /* alert.wav */; };
+		B9174FA71EBA917500BF5A41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9174FA91EBA917500BF5A41 /* InfoPlist.strings */; };
 		B92AD34A1E9642990048E613 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92AD3491E9642990048E613 /* TabBarController.swift */; };
 		B9314A0E1E929CDF00626CCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9314A0D1E929CDF00626CCB /* AppDelegate.swift */; };
 		B9314A101E929CDF00626CCB /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9314A0F1E929CDF00626CCB /* DataViewController.swift */; };
@@ -71,8 +72,11 @@
 		7E3C1D4F88487F133407A882 /* Pods-Monitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monitor.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monitor/Pods-Monitor.release.xcconfig"; sourceTree = "<group>"; };
 		9D6E3CFA8B3EA1DB582BC184 /* Pods_Monitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9067EAE1E9830F100744F8B /* alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alert.wav; sourceTree = "<group>"; };
+		B9174FA61EBA90FF00BF5A41 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		B9174FA81EBA917500BF5A41 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		B9174FAA1EBA917B00BF5A41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B92AD3491E9642990048E613 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		B9314A0A1E929CDF00626CCB /* Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9314A0A1E929CDF00626CCB /* 		.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "\t\t.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9314A0D1E929CDF00626CCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9314A0F1E929CDF00626CCB /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		B9314A111E929CDF00626CCB /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
@@ -137,7 +141,7 @@
 		B9314A0B1E929CDF00626CCB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B9314A0A1E929CDF00626CCB /* Monitor.app */,
+				B9314A0A1E929CDF00626CCB /* 		.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,6 +160,7 @@
 				B9314A251E929FA200626CCB /* SettingViewController.swift */,
 				B9C441B01EA6782A000F6EB6 /* AccountViewController.swift */,
 				B9C441B21EA683DB000F6EB6 /* PwdViewController.swift */,
+				B9174FA91EBA917500BF5A41 /* InfoPlist.strings */,
 				B9314A211E929D1700626CCB /* LineChart.swift */,
 				B94D2C881E9547210080DFA7 /* PanelView.swift */,
 				B9D7AF9D1EA0D4A9000184C0 /* UICollectionGridViewController.swift */,
@@ -179,9 +184,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B9314A091E929CDF00626CCB /* Monitor */ = {
+		B9314A091E929CDF00626CCB /* 		 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B9314A1E1E929CDF00626CCB /* Build configuration list for PBXNativeTarget "Monitor" */;
+			buildConfigurationList = B9314A1E1E929CDF00626CCB /* Build configuration list for PBXNativeTarget "		" */;
 			buildPhases = (
 				DBD0010D141D48CB331CDC1A /* [CP] Check Pods Manifest.lock */,
 				B9314A061E929CDF00626CCB /* Sources */,
@@ -196,9 +201,9 @@
 			dependencies = (
 				B9D7AFC81EA1208C000184C0 /* PBXTargetDependency */,
 			);
-			name = Monitor;
+			name = "		";
 			productName = Monitor;
-			productReference = B9314A0A1E929CDF00626CCB /* Monitor.app */;
+			productReference = B9314A0A1E929CDF00626CCB /* 		.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -238,7 +243,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				B9314A091E929CDF00626CCB /* Monitor */,
+				B9314A091E929CDF00626CCB /* 		 */,
 			);
 		};
 /* End PBXProject section */
@@ -266,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9067EAF1E9830F100744F8B /* alert.wav in Resources */,
+				B9174FA71EBA917500BF5A41 /* InfoPlist.strings in Resources */,
 				B9D7AFB91EA11C78000184C0 /* Assets.xcassets in Resources */,
 				B9314A151E929CDF00626CCB /* Main.storyboard in Resources */,
 			);
@@ -354,10 +360,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B9174FA91EBA917500BF5A41 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9174FA81EBA917500BF5A41 /* zh-Hans */,
+				B9174FAA1EBA917B00BF5A41 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		B9314A131E929CDF00626CCB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B9314A141E929CDF00626CCB /* Base */,
+				B9174FA61EBA90FF00BF5A41 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -369,6 +385,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -418,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -502,7 +520,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B9314A1E1E929CDF00626CCB /* Build configuration list for PBXNativeTarget "Monitor" */ = {
+		B9314A1E1E929CDF00626CCB /* Build configuration list for PBXNativeTarget "		" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B9314A1F1E929CDF00626CCB /* Debug */,
