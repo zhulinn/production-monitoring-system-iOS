@@ -38,6 +38,7 @@
     {
       "orientation" : "portrait",
       "idiom" : "ipad",
+      "filename" : "768-1024.png",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
       "scale" : "1x"
@@ -45,6 +46,7 @@
     {
       "orientation" : "portrait",
       "idiom" : "ipad",
+      "filename" : "1536.png",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
       "scale" : "2x"
