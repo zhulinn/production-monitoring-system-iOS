@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-1223" y="12"/>
         </scene>
-        <!--温湿度实时显示-->
+        <!--实时数据显示-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="DataViewController" customModule="__" customModuleProvider="target" sceneMemberID="viewController">
@@ -126,7 +126,7 @@
                             <constraint firstItem="64F-wB-8zG" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="84" id="xSv-Yf-l87"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="温湿度实时显示" id="ApZ-Cx-DSG">
+                    <navigationItem key="navigationItem" title="实时数据显示" id="ApZ-Cx-DSG">
                         <barButtonItem key="rightBarButtonItem" title="设置" id="IzY-kB-e67">
                             <connections>
                                 <segue destination="fdy-gA-oqU" kind="presentation" identifier="AlertSetting" id="w4p-Mt-BZp"/>
@@ -164,7 +164,7 @@
             </objects>
             <point key="canvasLocation" x="244" y="12"/>
         </scene>
-        <!--用户设置-->
+        <!--用户管理-->
         <scene sceneID="mUw-pz-ULa">
             <objects>
                 <tableViewController id="XQ2-9N-MI0" customClass="AccountViewController" customModule="__" customModuleProvider="target" sceneMemberID="viewController">
@@ -179,11 +179,11 @@
                                         <rect key="frame" x="0.0" y="99" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wuc-ZD-05x" id="7Ad-EX-fqu">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="修改密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DtE-9j-SzE">
-                                                    <frame key="frameInset" minX="15" width="325" height="43"/>
+                                                    <frame key="frameInset" minX="15" width="325" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -203,11 +203,11 @@
                                         <rect key="frame" x="0.0" y="179" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QvI-9T-wI8" id="fSe-oS-jwX">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="注销" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tdo-CF-rAJ">
-                                                    <frame key="frameInset" minX="15" width="345" height="43"/>
+                                                    <frame key="frameInset" minX="15" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -224,7 +224,7 @@
                             <outlet property="delegate" destination="XQ2-9N-MI0" id="ceJ-Eq-A8C"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="用户设置" id="ClU-c9-kiV"/>
+                    <navigationItem key="navigationItem" title="用户管理" id="ClU-c9-kiV"/>
                     <connections>
                         <segue destination="5N2-P0-eD4" kind="presentation" identifier="logout" id="KER-Kw-aYw"/>
                     </connections>
@@ -233,7 +233,7 @@
             </objects>
             <point key="canvasLocation" x="981" y="746"/>
         </scene>
-        <!--修改密码-->
+        <!--密码修改-->
         <scene sceneID="zRJ-Jt-IHS">
             <objects>
                 <tableViewController id="Cg4-mT-cCQ" customClass="PwdViewController" customModule="__" customModuleProvider="target" sceneMemberID="viewController">
@@ -248,11 +248,11 @@
                                         <rect key="frame" x="0.0" y="99" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3XM-IK-uHr" id="KYq-VL-H4g">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="用户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RpH-nH-Ea8">
-                                                    <frame key="frameInset" minX="15" width="345" height="43"/>
+                                                    <frame key="frameInset" minX="15" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
@@ -272,11 +272,11 @@
                                         <rect key="frame" x="0.0" y="143" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OGx-Yq-4cZ" id="ILz-hI-UXF">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="原密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G4b-Mo-Y6R">
-                                                    <frame key="frameInset" minX="15" width="345" height="43"/>
+                                                    <frame key="frameInset" minX="15" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -296,11 +296,11 @@
                                         <rect key="frame" x="0.0" y="187" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ETd-25-8Dr" id="u9r-S5-9pG">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="修改密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="byU-f5-mVU">
-                                                    <frame key="frameInset" minX="15" width="345" height="43"/>
+                                                    <frame key="frameInset" minX="15" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -320,11 +320,11 @@
                                         <rect key="frame" x="0.0" y="231" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1c0-Su-bYV" id="uGu-fs-Mn7">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="确认密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="320-cP-rqc">
-                                                    <frame key="frameInset" minX="15" width="345" height="43"/>
+                                                    <frame key="frameInset" minX="15" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -348,7 +348,7 @@
                             <outlet property="delegate" destination="Cg4-mT-cCQ" id="0wF-sK-m0U"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="修改密码" id="1fc-uM-KD8">
+                    <navigationItem key="navigationItem" title="密码修改" id="1fc-uM-KD8">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yRJ-4k-Ku1">
                             <connections>
                                 <action selector="cancel" destination="Cg4-mT-cCQ" id="gBZ-cI-fhE"/>
@@ -389,11 +389,11 @@
             </objects>
             <point key="canvasLocation" x="981" y="1480"/>
         </scene>
-        <!--用户设置-->
+        <!--用户管理-->
         <scene sceneID="3wV-vJ-rS4">
             <objects>
                 <navigationController id="HcI-ua-wO1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="用户设置" image="user2x" id="pxN-6t-ISR"/>
+                    <tabBarItem key="tabBarItem" title="用户管理" image="user2x" id="pxN-6t-ISR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xvd-Qv-hta">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -406,11 +406,11 @@
             </objects>
             <point key="canvasLocation" x="982" y="-2"/>
         </scene>
-        <!--实时曲线-->
+        <!--折线显示-->
         <scene sceneID="rrj-b7-QCz">
             <objects>
                 <navigationController id="Gxb-ci-sOu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="实时曲线" image="chart2x" id="QWK-1a-Q5y"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="折线显示" image="chart2x" id="QWK-1a-Q5y"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RUM-9Y-DVg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -423,7 +423,7 @@
             </objects>
             <point key="canvasLocation" x="-510" y="11"/>
         </scene>
-        <!--温湿度实时曲线-->
+        <!--折线动态显示-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="GraphViewController" customModule="__" customModuleProvider="target" sceneMemberID="viewController">
@@ -503,7 +503,7 @@
                             <constraint firstItem="5yq-ds-dcN" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="zy9-s5-oLn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="温湿度实时曲线" id="pTz-nc-K8a"/>
+                    <navigationItem key="navigationItem" title="折线动态显示" id="pTz-nc-K8a"/>
                     <connections>
                         <outlet property="label1" destination="OIK-kt-IGf" id="J52-kQ-VAc"/>
                         <outlet property="label2" destination="8Jz-dp-t1f" id="XU7-pb-DOo"/>
@@ -516,7 +516,7 @@
             </objects>
             <point key="canvasLocation" x="-509.60000000000002" y="745.27736131934034"/>
         </scene>
-        <!--温湿度历史数据-->
+        <!--历史数据查询-->
         <scene sceneID="j0R-9D-rvh">
             <objects>
                 <viewController id="qdh-v6-PoR" customClass="HistoryViewController" customModule="__" customModuleProvider="target" sceneMemberID="viewController">
@@ -527,18 +527,9 @@
                     <view key="view" contentMode="scaleToFill" id="yPd-B8-75v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0eh-Wo-Rvg">
-                                <frame key="frameInset" minX="34" minY="304" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="温湿度历史数据" id="0Wi-zb-XCz">
+                    <navigationItem key="navigationItem" title="历史数据查询" id="0Wi-zb-XCz">
                         <barButtonItem key="rightBarButtonItem" title="查询" id="SVN-nh-A4m">
                             <connections>
                                 <segue destination="IOf-tF-Qcu" kind="presentation" identifier="Setting" id="6zL-e1-Lvb"/>
@@ -572,7 +563,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJS-YS-v0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1682" y="-908"/>
+            <point key="canvasLocation" x="2442" y="10"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -593,9 +584,9 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-158" y="-787"/>
+            <point key="canvasLocation" x="-137" y="-847"/>
         </scene>
-        <!--参数设定-->
+        <!--查询时间设置-->
         <scene sceneID="KRB-0v-AQf">
             <objects>
                 <tableViewController id="wXb-1z-gTB" customClass="SettingViewController" customModule="__" customModuleProvider="target" sceneMemberID="viewController">
@@ -610,18 +601,18 @@
                                         <rect key="frame" x="0.0" y="99" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R79-3h-lkf" id="1hc-Rq-9cC">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="起始时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0h0-Pd-fBy">
-                                                    <frame key="frameInset" minX="15" minY="11" width="70" height="21"/>
+                                                    <frame key="frameInset" minX="15" minY="12" width="69.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="79y-oq-Yg7">
-                                                    <frame key="frameInset" minX="316" minY="11" width="44" height="21"/>
+                                                    <frame key="frameInset" minX="316" minY="12" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
@@ -663,18 +654,18 @@
                                         <rect key="frame" x="0.0" y="386" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0tg-Fa-QsR" id="Xk3-JF-6iA">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="截止时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NuG-hA-ie4">
-                                                    <frame key="frameInset" minX="15" minY="11" width="70" height="21"/>
+                                                    <frame key="frameInset" minX="15" minY="12" width="69.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LBV-ck-WRd">
-                                                    <frame key="frameInset" minX="316" minY="11" width="44" height="21"/>
+                                                    <frame key="frameInset" minX="316" minY="12" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
@@ -715,7 +706,7 @@
                             <outlet property="delegate" destination="wXb-1z-gTB" id="ARf-Zn-6b5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="参数设定" id="beZ-38-VNy">
+                    <navigationItem key="navigationItem" title="查询时间设置" id="beZ-38-VNy">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zOd-qA-HtL">
                             <connections>
                                 <action selector="cancel" destination="wXb-1z-gTB" id="d6Y-Vb-brK"/>
@@ -757,7 +748,7 @@
             </objects>
             <point key="canvasLocation" x="244" y="1493"/>
         </scene>
-        <!--参数设定-->
+        <!--警戒值设置-->
         <scene sceneID="hN0-S7-wAv">
             <objects>
                 <tableViewController id="p43-C2-u9D" customClass="AlertSettingViewController" customModule="__" customModuleProvider="target" sceneMemberID="viewController">
@@ -840,7 +831,7 @@
                             <outlet property="delegate" destination="p43-C2-u9D" id="Agx-rg-Dzd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="参数设定" id="jLo-k2-ZjO">
+                    <navigationItem key="navigationItem" title="警戒值设置" id="jLo-k2-ZjO">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="vb2-id-KSN">
                             <connections>
                                 <action selector="cancel" destination="p43-C2-u9D" id="Xfd-bz-2hN"/>
@@ -888,6 +879,6 @@
         <image name="user2x" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KER-Kw-aYw"/>
+        <segue reference="lZd-th-cuN"/>
     </inferredMetricsTieBreakers>
 </document>

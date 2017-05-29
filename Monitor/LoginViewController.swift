@@ -147,7 +147,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         //标题label
         self.titleLabel = UILabel()
-        self.titleLabel.text = "智能控制系统"
+    self.titleLabel.text = "智能控制系统"
         self.titleLabel.textColor = UIColor.white
         self.titleLabel.font = UIFont.systemFont(ofSize: 36)
         self.view.addSubview(self.titleLabel)

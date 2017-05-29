@@ -478,7 +478,7 @@
 		};
 		B9314A1F1E929CDF00626CCB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD8907F803EBE724773E8085 /* Pods-Monitor.debug.xcconfig */;
+			baseConfigurationReference = 7E3C1D4F88487F133407A882 /* Pods-Monitor.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
