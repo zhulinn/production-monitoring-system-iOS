@@ -72,8 +72,6 @@
 		7E3C1D4F88487F133407A882 /* Pods-Monitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monitor.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monitor/Pods-Monitor.release.xcconfig"; sourceTree = "<group>"; };
 		9D6E3CFA8B3EA1DB582BC184 /* Pods_Monitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9067EAE1E9830F100744F8B /* alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alert.wav; sourceTree = "<group>"; };
-		B9174FA61EBA90FF00BF5A41 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		B9174FA81EBA917500BF5A41 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		B9174FAA1EBA917B00BF5A41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B92AD3491E9642990048E613 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B9314A0A1E929CDF00626CCB /* 		.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "\t\t.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +84,7 @@
 		B9314A231E929F8800626CCB /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		B9314A251E929FA200626CCB /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B94D2C881E9547210080DFA7 /* PanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
+		B97BEF871EDCC1830015E98E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		B9C441AD1EA62DEF000F6EB6 /* AlertSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSettingViewController.swift; sourceTree = "<group>"; };
 		B9C441B01EA6782A000F6EB6 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		B9C441B21EA683DB000F6EB6 /* PwdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwdViewController.swift; sourceTree = "<group>"; };
@@ -363,8 +362,8 @@
 		B9174FA91EBA917500BF5A41 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B9174FA81EBA917500BF5A41 /* zh-Hans */,
 				B9174FAA1EBA917B00BF5A41 /* en */,
+				B97BEF871EDCC1830015E98E /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -373,7 +372,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				B9314A141E929CDF00626CCB /* Base */,
-				B9174FA61EBA90FF00BF5A41 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

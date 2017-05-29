@@ -24,6 +24,11 @@ class AccountViewController: UITableViewController{
                 action in
           //  self.dismiss(animated: true, completion: nil)
 
+               
+                if let timer = timer {
+                    timer.invalidate()
+                }
+                
                 self.performSegue(withIdentifier: "logout", sender: self)
     
             })
@@ -31,6 +36,8 @@ class AccountViewController: UITableViewController{
             alertController.addAction(deleteAction)
             self.present(alertController, animated: true, completion: nil)
         } else if indexPath.section == 0 && indexPath.row == 0 {
+            
+            
             self.performSegue(withIdentifier: "pwd", sender: self)
         }
         tableView.deselectRow(at: indexPath, animated: true)

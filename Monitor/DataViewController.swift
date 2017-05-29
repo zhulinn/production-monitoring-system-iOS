@@ -13,7 +13,7 @@ import AudioToolbox
 protocol DataViewControllerDelegate: class {
     func gotrecord(_ controller: DataViewController, record: [String:Any])
 }
-
+  var timer: Timer?
 class DataViewController: UIViewController, AlertSettingViewControllerDelegate{
     
     weak var delegate: DataViewControllerDelegate?
@@ -21,7 +21,7 @@ class DataViewController: UIViewController, AlertSettingViewControllerDelegate{
     var interval = 3
     var isupdating = false
     var url: URL!
-    var timer: Timer?
+  
     var st: CGFloat!
     var sh: CGFloat!
     var isPlaying = false

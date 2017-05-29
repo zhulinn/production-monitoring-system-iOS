@@ -127,7 +127,11 @@ class PwdViewController: UITableViewController, UITextFieldDelegate {
     func successpop() {
         let alertVC = UIAlertController(title: "密码修改成功", message: "请重新登陆", preferredStyle: UIAlertControllerStyle.alert)
         let acCancel = UIAlertAction(title: "确定", style: UIAlertActionStyle.default) { (UIAlertAction) -> Void in
-           		
+            
+            
+            if let timer = timer {
+                timer.invalidate()
+            }
             self.performSegue(withIdentifier: "forceout", sender: self)
         }
         alertVC.addAction(acCancel)
