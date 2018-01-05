@@ -1,4 +1,4 @@
-# production-monitoring-system-iOS
+# Production-Monitoring-System-iOS
 <strong>Stacks: </strong>Swift, PHP, MySQL, Apache, LAMP, CocoaPods...
 ### Features:
 #### Front-End
@@ -15,15 +15,15 @@
 - API 
 - ...
 
-<p >
- Login：<br>
+
+ #### Login：
   <img src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/login.png" width = "180" height = "320"><br>
- Real-time Data: <br>
+ #### Real-time Data: <br>
   <img src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/data.gif" width = "180" height = "320"> <br>
- Line Chart: <br>
+ #### Line Chart: <br>
   <img src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/graph.gif" width = "320" height = "180"> <br>
- History Data：<br>
+ #### History Data：<br>
   <img src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/history.png" width = "320" height = "180">  <br>
- Account Management:<br>
+ #### Account Management:<br>
   <img src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/manage.png"   width = "180" height = "320">
-</p>
+
