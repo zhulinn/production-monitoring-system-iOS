@@ -27,10 +27,10 @@
  #### Line Chart: <br>
   <img src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/datepicker.png" width = "180" height = "320">   
   <img style="display:inline" src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/llnechart.gif" width = "320" height = "180"> 
-  <img style="display:inline" src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/chartdetail.png" width = "320" height = "180">
- #### History Data：
+  <img style="display:inline" src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/chartdetail.png" width = "320" height = "180"><br>
+ #### History Data：<br>
   <img  style="display:inline" src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/table.png" width = "320" height = "180"> 
-  <img  style="display:inline" src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/history.png" width = "320" height = "180"> 
+  <img  style="display:inline" src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/history.png" width = "320" height = "180"> <br>
  #### Account Management:
   <img src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/manage.png"   width = "180" height = "320">
 
