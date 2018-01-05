@@ -15,7 +15,7 @@
 - API 
 - ...
 
- <hr>
+
  #### Login：
  <img style="display:inline" src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/login.png" width = "180" height = "320"> <img style="display:inline" src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/wrong.png" width = "180" height = "320"> 
 
