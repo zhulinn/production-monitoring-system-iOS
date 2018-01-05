@@ -17,9 +17,11 @@
 
 
  #### Login：
-  <img src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/login.png" width = "180" height = "320"><br>
+  <img style.display="inline" src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/login.png" width = "180" height = "320"><br>
+    <img style.display="inline" src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/wrong.png" width = "180" height = "320"><br>
  #### Real-time Data: <br>
-  <img src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/dashboard.gif" width = "180" height = "320"> <br>
+     <img style.display="inline" src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/setting.png" width = "180" height = "320"><br>
+  <img style.display="inline"  src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/dashboard.gif" width = "180" height = "320"> <br>
  #### Line Chart: <br>
   <img src="https://github.com/zhulinn/production-monitoring-system-iOS/raw/master/demo/llnechart.gif" width = "320" height = "180"> <br>
  #### History Data：<br>
