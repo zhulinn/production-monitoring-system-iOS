@@ -1,5 +1,19 @@
 # production-monitoring-system-iOS
-
+<strong>Stacks: </strong>Swift, PHP, MySQL, Apache, LAMP, CocoaPods...
+### Features:
+#### Front-End
+- User Authentication
+- Real-time Data Dashboard
+- Real-time Line Chart
+- Historical Records Query
+- User Management
+- ...
+#### Back-End
+- MySQL Database
+- TCP/IP Port Listener
+- JSON 
+- API 
+- ...
 
 <p >
  Login：<br>
